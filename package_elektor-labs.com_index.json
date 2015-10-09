@@ -17,7 +17,7 @@
           "help": {
             "online": "http://www.elektor-labs.com"
           },
-          "url": "https://github.com/ElektorLabs/arduino/elektor-boards-1.0.0.zip",
+          "url": "https://github.com/ElektorLabs/arduino/blob/master/elektor-boards-1.0.0.zip",
           "archiveFileName": "elektor-boards-1.0.0.zip",
           "checksum": "SHA-256:312e37fb5f7fa18dc4b8e1a30d56ea04ab259ded65cdff12ec4afc81c1553057",
           "size": "15005",
