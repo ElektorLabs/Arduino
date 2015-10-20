@@ -22,7 +22,7 @@
           "checksum": "86b75c3232848dd77761c88d7bde5a74a4dc15a62a8bb3dba6b182fcb6c767bd",
           "size": "123186",
           "boards": [
-            {"name": "eRIC Nitro"}
+            {"name": "eRIC Nitro"},
             {"name": "Platino"}
           ],
           "toolsDependencies": [
