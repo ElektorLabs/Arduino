@@ -1,7 +1,7 @@
 {
   "packages": [
     {
-      "name": "elektor",
+      "name": "Elektor",
       "maintainer": "Elektor.Labs",
       "websiteURL": "https://github.com/ElektorLabs/arduino/",
       "email": "info@elektor-labs.com",
@@ -19,10 +19,11 @@
           },
           "url": "https://raw.githubusercontent.com/ElektorLabs/arduino/master/elektor-boards-1.0.0.zip",
           "archiveFileName": "elektor-boards-1.0.0.zip",
-          "checksum": "SHA-256:a961c87a7ee5cc550a5aa167b039991a35d5def11b193611198fcd5a34e9ac95",
-          "size": "7651",
+          "checksum": "SHA-256:86b75c3232848dd77761c88d7bde5a74a4dc15a62a8bb3dba6b182fcb6c767bd",
+          "size": "123186",
           "boards": [
             {"name": "eRIC Nitro"}
+            {"name": "Platino"}
           ],
           "toolsDependencies": [
             {
