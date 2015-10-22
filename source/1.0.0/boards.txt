@@ -45,21 +45,6 @@ platino.menu.cpu.atmega16.build.mcu=atmega16
 platino.menu.cpu.atmega16.build.variant=Platino-40pin
 platino.menu.cpu.atmega16.build.board=AVR_PLATINO_40PIN
 
-## Platino with ATmega16A
-## ---------------------------------------------
-## avrdude doesn't know the ATmega16A so do as if it is an ATmega16 
-## and ignore the signature bytes.
-## platino.menu.cpu.atmega16a=ATmega16A
-## platino.menu.cpu.atmega16a.upload.maximum_size=15872
-## #platino.menu.cpu.atmega16a.bootloader.tool=avrdude_no_efuse_no_signature
-## platino.menu.cpu.atmega16a.bootloader.tool=avrdude_no_efuse
-## platino.menu.cpu.atmega16a.bootloader.low_fuses=0xbf
-## platino.menu.cpu.atmega16a.bootloader.high_fuses=0xdc
-## platino.menu.cpu.atmega16a.bootloader.file=Platino/optiboot_platino16_and_a.hex
-## platino.menu.cpu.atmega16a.build.mcu=atmega16
-## platino.menu.cpu.atmega16a.build.variant=Platino-40pin
-## platino.menu.cpu.atmega16a.build.board=AVR_PLATINO_40PIN
-
 ## Platino with ATmega32(A)
 ## ---------------------------------------------
 platino.menu.cpu.atmega32=ATmega32(A)
