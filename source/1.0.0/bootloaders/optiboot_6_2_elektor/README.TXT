@@ -12,6 +12,8 @@ contents to:
 
   <Arduino>\hardware\arduino\avr\bootloaders\
 
+where <Arduino> is the path to arduino.exe.
+
 Open a command prompt and navigate to the newly added folder, ex:
 
   <Arduino>\hardware\arduino\avr\bootloaders\optiboot_6_2_elektor\
@@ -31,12 +33,24 @@ The Platino bootloaders can be compiled in one go with the command:
 For the eRIC Nitro board use this command:
 
   make eric_nitro
+  
+Make them all with:
 
-The ISP rules have not been tested. However, the bootloader programming
-option in the Arduino IDE has been tested with all the bootloaders.
+  make eric_nitro_all
+
+To make the bootloaders for all the Elektor boards use:
+
+  make elektor_all
+
+The ISP rules have not been tested but should work. Bootloader programming
+from within the Arduino IDE has been tested with all the bootloaders.
+
+Note: the ATmega48 can be used on Platino but it does not have a 
+bootloader because it doesn't have bootloader memory. It will not work
+in the Arduino IDE.
 
 Mods by CPV, Elektor
-22/10/2015
+26/10/2015
 *******
 
 Optiboot is more fully described here: http://github.com/Optiboot/optiboot

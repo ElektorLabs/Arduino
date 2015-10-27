@@ -384,6 +384,7 @@ platino88pa_isp: platino88p_isp
 
 # ATmega48 does not have a bootloader section so no point in making one.
 
+platino48:
 platino48: $(info ATmega48 does not have a bootloader section so no point in making one.)
 
 platino48_isp: platino48
@@ -535,20 +536,16 @@ platino_all: platino8a
 # Elektor eRIC Nitro board
 #
 
-eric_nitro: TARGET = $@
-eric_nitro: CHIP = atmega328
-eric_nitro:
-	$(MAKE) $(CHIP) AVR_FREQ=8000000L LED_START_FLASHES=3 LED_DATA_FLASH=1 LED=B1
+eric_nitro_and_p: TARGET = $@
+eric_nitro_and_p: CHIP = atmega328
+eric_nitro_and_p:
+	$(MAKE) $(CHIP) AVR_FREQ=8000000L LED=B1 BAUD_RATE=57600
 	mv $(PROGRAM)_$(CHIP).hex $(PROGRAM)_$(TARGET).hex
 	mv $(PROGRAM)_$(CHIP).lst $(PROGRAM)_$(TARGET).lst
 
 # Same as non-P version.
-eric_nitro_p: TARGET = $@
-eric_nitro_p: CHIP = atmega328
-eric_nitro_p:
-	$(MAKE) $(CHIP) AVR_FREQ=8000000L LED_START_FLASHES=3 LED_DATA_FLASH=1 LED=B1
-	mv $(PROGRAM)_$(CHIP).hex $(PROGRAM)_$(TARGET).hex
-	mv $(PROGRAM)_$(CHIP).lst $(PROGRAM)_$(TARGET).lst
+eric_nitro: eric_nitro_and_p
+eric_nitro_p: eric_nitro_and_p
 
 eric_nitro_isp: eric_nitro
 eric_nitro_isp: TARGET = eric_nitro
@@ -561,7 +558,7 @@ eric_nitro_isp: LFUSE ?= FF
 eric_nitro_isp: EFUSE ?= 05
 eric_nitro_isp: isp
 
-eric_nitro_p_isp: eric_nitro
+eric_nitro_p_isp: eric_nitro_p
 eric_nitro_p_isp: TARGET = eric_nitro
 eric_nitro_p_isp: MCU_TARGET = atmega328p
 # 512 byte boot, SPIEN
