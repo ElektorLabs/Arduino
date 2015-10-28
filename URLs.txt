@@ -1,0 +1,2 @@
+https://raw.githubusercontent.com/ElektorLabs/arduino/master/package_elektor-labs.com_index.json
+https://raw.githubusercontent.com/ElektorLabs/arduino/master/elektor-boards-1.0.0.zip
