@@ -1,2 +1,6 @@
-https://raw.githubusercontent.com/ElektorLabs/arduino/master/package_elektor-labs.com_index.json
-https://raw.githubusercontent.com/ElektorLabs/arduino/master/elektor-boards-1.0.0.zip
+https://github.com/ElektorLabs/Arduino/
+https://raw.githubusercontent.com/ElektorLabs/arduino/master/package_elektor-labs.com_ide-1.6.5_index.json
+https://raw.githubusercontent.com/ElektorLabs/arduino/master/package_elektor-labs.com_ide-1.6.6_index.json
+https://raw.githubusercontent.com/ElektorLabs/arduino/master/elektor-boards-1.0.0_ide-1.6.5.zip
+https://raw.githubusercontent.com/ElektorLabs/arduino/master/elektor-boards-1.0.0_ide-1.6.6.zip
+

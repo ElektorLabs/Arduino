@@ -44,4 +44,7 @@ Temporary Items
 
 not-on-github/
 sha256sum.exe
+publish.py
+platform-1.6.5.txt
+platform-1.6.6.txt
 .gitignore

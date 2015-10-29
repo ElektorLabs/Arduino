@@ -18,9 +18,9 @@
             "online": "http://www.elektor-labs.com"
           },
           "url": "https://raw.githubusercontent.com/ElektorLabs/arduino/master/elektor-boards-1.0.0.zip",
-          "archiveFileName": "elektor-boards-1.0.0-ide-1-6-5.zip",
-          "checksum": "SHA-256:5fb824d81580c7ce95ee833a0979e054bf9f9a8375e1d011ec64d7598f138f27",
-          "size": "194899",
+          "archiveFileName": "elektor-boards-1.0.0.zip",
+          "checksum": "SHA-256:37afd7bf91f82ccfcb4ac32f6e5d85c0e85f1d662b3ce46ba3c892ba585a3182",
+          "size": "190943",
           "help": {
                     "online": "http://www.elektor-labs.com"
           },
