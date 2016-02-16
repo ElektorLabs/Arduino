@@ -76,8 +76,8 @@
               "host": "i686-mingw32",
               "url": "https://raw.githubusercontent.com/ElektorLabs/arduino/master/avrdude-6.0.1-windows.zip",
               "archiveFileName": "avrdude-6.0.1-windows.zip",
-              "size": "198106",
-              "checksum": "SHA-256:69a471911cfaa6135542c92a16d5dc4bf00d31b9abc67e9ea59a4ac5a39d7b84"
+              "size": "198230",
+              "checksum": "SHA-256:eae90eb4335d0e93961edea328714aadd4047098cffbd2af13d9b1931251d97f"
             }
           ]
         }
