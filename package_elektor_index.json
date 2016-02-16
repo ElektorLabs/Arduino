@@ -64,7 +64,7 @@
               "url": "https://raw.githubusercontent.com/ElektorLabs/arduino/master/avr-gcc-4.9.2-i686-mingw32.zip",
               "archiveFileName": "avr-gcc-4.9.2-i686-mingw32.zip",
               "size": "68904094",
-              "checksum": "SHA-256:a5d0a4f5c95578d102077f2683d748d6c67c45ded80459009e5f13223619de8e",
+              "checksum": "SHA-256:a5d0a4f5c95578d102077f2683d748d6c67c45ded80459009e5f13223619de8e"
             }
           ]
         }
