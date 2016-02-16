@@ -1,0 +1,74 @@
+{
+  "packages": [
+    {
+      "name": "Elektor",
+      "maintainer": "Elektor.Labs",
+      "websiteURL": "https://github.com/ElektorLabs/arduino/",
+      "email": "info@elektor-labs.com",
+      "help": {
+        "online": "http://www.elektor-labs.com"
+      },
+      "platforms": [
+        {
+          "name": "Elektor AVR boards",
+          "architecture": "avr",
+          "version": "1.1.0",
+          "category": "Contributed",
+          "help": {
+            "online": "http://www.elektor-labs.com"
+          },
+          "url": "https://raw.githubusercontent.com/ElektorLabs/arduino/master/elektor-boards-1.1.0.zip",
+          "archiveFileName": "elektor-boards-1.1.0.zip",
+          "checksum": "SHA-256:ce91edefe619f78b3cc1e36e44820f1284a3c54d115aa9ffaca9d53636643bef",
+          "size": "168779",
+          "help": {
+                    "online": "http://www.elektor-labs.com"
+          },
+          "boards": [
+            {"name": "Black Whiteboard R4"},
+            {"name": "eRIC Nitro"},
+            {"name": "eRIC Nitro R4"},
+            {"name": "Platino"}
+          ],
+          "toolsDependencies": [
+            {
+              "packager": "arduino",
+              "name": "avr-gcc",
+              "version": "4.8.1-arduino5"
+            },
+            {
+              "packager": "arduino",
+              "name": "avrdude",
+              "version": "6.0.1-arduino5"
+            },
+            {
+              "packager": "Elektor",
+              "name": "avr-gcc",
+              "version": "4.9.2"
+            },
+            {
+              "packager": "Elektor",
+              "name": "avrdude",
+              "version": "6.0.1"
+            }
+          ]
+        }
+      ],
+      "tools":[
+        {
+          "name": "avr-gcc",
+          "version": "4.9.2",
+          "systems": [
+            {
+              "host": "i686-mingw32",
+              "url": "https://raw.githubusercontent.com/ElektorLabs/arduino/master/avr-gcc-4.9.2-i686-mingw32.zip",
+              "archiveFileName": "avr-gcc-4.9.2-i686-mingw32.zip",
+              "size": "68904094",
+              "checksum": "SHA-256:a5d0a4f5c95578d102077f2683d748d6c67c45ded80459009e5f13223619de8e",
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
