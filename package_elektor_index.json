@@ -32,16 +32,6 @@
           ],
           "toolsDependencies": [
             {
-              "packager": "arduino",
-              "name": "avr-gcc",
-              "version": "4.8.1-arduino5"
-            },
-            {
-              "packager": "arduino",
-              "name": "avrdude",
-              "version": "6.0.1-arduino5"
-            },
-            {
               "packager": "Elektor",
               "name": "avr-gcc",
               "version": "4.9.2"
@@ -63,8 +53,8 @@
               "host": "i686-mingw32",
               "url": "https://raw.githubusercontent.com/ElektorLabs/arduino/master/avr-gcc-4.9.2-i686-mingw32.zip",
               "archiveFileName": "avr-gcc-4.9.2-i686-mingw32.zip",
-              "size": "68852455",
-              "checksum": "SHA-256:1e6a94559be8aeafeaa621e0b8b9366fa293aefd210ebbaa2533712652c78c06"
+              "size": "68951953",
+              "checksum": "SHA-256:e8e90ba4ca8db04abbd83c8a891a87cc25c5e351f6cba9f6b97b37e1d62b4ccb"
             }
           ]
         },
