@@ -19,8 +19,8 @@
           },
           "url": "https://raw.githubusercontent.com/ElektorLabs/arduino/master/elektor-boards-1.1.0.zip",
           "archiveFileName": "elektor-boards-1.1.0.zip",
-          "checksum": "SHA-256:ce91edefe619f78b3cc1e36e44820f1284a3c54d115aa9ffaca9d53636643bef",
-          "size": "168779",
+          "checksum": "SHA-256:31c24f06d307b121a195e0f1902c06eabffe986d395a10396962c59d4c1b8d23",
+          "size": "168812",
           "help": {
                     "online": "http://www.elektor-labs.com"
           },
@@ -63,8 +63,21 @@
               "host": "i686-mingw32",
               "url": "https://raw.githubusercontent.com/ElektorLabs/arduino/master/avr-gcc-4.9.2-i686-mingw32.zip",
               "archiveFileName": "avr-gcc-4.9.2-i686-mingw32.zip",
-              "size": "68904094",
-              "checksum": "SHA-256:a5d0a4f5c95578d102077f2683d748d6c67c45ded80459009e5f13223619de8e"
+              "size": "68852455",
+              "checksum": "SHA-256:1e6a94559be8aeafeaa621e0b8b9366fa293aefd210ebbaa2533712652c78c06"
+            }
+          ]
+        },
+        {
+          "name": "avrdude",
+          "version": "6.0.1",
+          "systems": [
+            {
+              "host": "i686-mingw32",
+              "url": "https://raw.githubusercontent.com/ElektorLabs/arduino/master/avrdude-6.0.1-windows.zip",
+              "archiveFileName": "avrdude-6.0.1-windows.zip",
+              "size": "198106",
+              "checksum": "SHA-256:69a471911cfaa6135542c92a16d5dc4bf00d31b9abc67e9ea59a4ac5a39d7b84"
             }
           ]
         }
