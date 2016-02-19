@@ -1,0 +1,74 @@
+{
+  "packages": [
+    {
+      "name": "Elektor",
+      "maintainer": "Elektor.Labs",
+      "websiteURL": "https://github.com/ElektorLabs/arduino/",
+      "email": "info@elektor-labs.com",
+      "help": {
+        "online": "http://www.elektor-labs.com"
+      },
+      "platforms": [
+        {
+          "name": "Elektor AVR boards",
+          "architecture": "avr",
+          "version": "1.1.1",
+          "category": "Contributed",
+          "url": "https://raw.githubusercontent.com/ElektorLabs/arduino/master/elektor-boards-1.1.1.zip",
+          "archiveFileName": "elektor-boards-1.1.1.zip",
+          "checksum": "SHA-256:8c643a9618e6e21288107d6f536667f8dc0abfd41b692f1966a49a73d347f05f",
+          "size": "168870",
+          "help": {
+                    "online": "http://www.elektor-labs.com"
+          },
+          "boards": [
+            {"name": "Black Whiteboard R4"},
+            {"name": "eRIC Nitro"},
+            {"name": "eRIC Nitro R4"},
+            {"name": "Platino"}
+          ],
+          "toolsDependencies": [
+            {
+              "packager": "Elektor",
+              "name": "avr-gcc",
+              "version": "4.9.2-elektor"
+            },
+            {
+              "packager": "Elektor",
+              "name": "avrdude",
+              "version": "6.0.1-elektor"
+            }
+          ]
+        }
+      ],
+      "tools":[
+        {
+          "name": "avr-gcc",
+          "version": "4.9.2-elektor",
+          "systems": [
+            {
+              "host": "i686-mingw32",
+              "url": "https://raw.githubusercontent.com/ElektorLabs/arduino/master/avr-gcc-4.9.2-i686-mingw32.zip",
+              "archiveFileName": "avr-gcc-4.9.2-i686-mingw32.zip",
+              "size": "69087529",
+              "checksum": "SHA-256:ac2abfa197cf98300fef7686f4e1079c6145a4d25905a91d92d380eca98a21a2"
+            }
+          ]
+        },
+        {
+          "name": "avrdude",
+          "version": "6.0.1-elektor",
+          "systems": [
+            {
+              "host": "i686-mingw32",
+              "url": "https://raw.githubusercontent.com/ElektorLabs/arduino/master/avrdude-6.0.1-windows.zip",
+              "archiveFileName": "avrdude-6.0.1-windows.zip",
+              "size": "243812",
+              "checksum": "SHA-256:9a9fe33c1778f5463b4527ff6df055eb10bea3f81f8129fad772a782f18bd6f7"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
