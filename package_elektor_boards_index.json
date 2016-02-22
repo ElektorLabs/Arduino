@@ -48,8 +48,8 @@
           "category": "Contributed",
           "url": "https://raw.githubusercontent.com/ElektorLabs/arduino/master/elektor-boards-avr-pb-1.0.0.zip",
           "archiveFileName": "elektor-boards-avr-pb-1.0.0.zip",
-          "checksum": "SHA-256:b8dbdfbd7f14e9d4416a111a40402ffa5905bef160df05f5d22487d33805c741",
-          "size": "132264",
+          "checksum": "SHA-256:aa4fcd6fc24eff0406dfc573d1c71c887edf5562394261930d89bf4e198bbde4",
+          "size": "132261",
           "help": {
                     "online": "http://www.elektor-labs.com"
           },
