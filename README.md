@@ -10,7 +10,8 @@ Supports:
 Use the Arduino IDE Boards Manager to install this package, as follows:
 
 - Open the Arduino IDE's Preferences dialog: File -> Preferences
-- Arduino IDE 1.6.6 or higher: https://raw.githubusercontent.com/ElektorLabs/arduino/master/package_elektor_boards_index.json 
+- Arduino IDE 1.6.6 or higher: https://raw.githubusercontent.com/ElektorLabs/arduino/master/package_elektor_boards_index.json
+ 
   Add this URL to the edit box "Additional Boards Manager URLs". It is possible to have multiple URLs as long as 
   you separate them with commas.
 - Open the IDE's Boards Manager: Tools -> Board -> Boards Manager
@@ -31,3 +32,5 @@ Bootloaders for all supported boards and processors are provided in the package.
 Arduino as ISP sketch (or any other supported ISP programmer for that matter).
 
 Everything has been tested with Arduino IDE 1.6.7.
+
+P.S. Previous JSON files with a version number in their name have been replaced by "package_elektor_boards_index.json"
