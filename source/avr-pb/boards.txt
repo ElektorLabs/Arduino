@@ -1,0 +1,51 @@
+# Elektor eRIC Nitro R4, Black Whiteboard R4 Board Configuration
+#
+# For more information see:
+# - https://github.com/arduino/Arduino/wiki/Arduino-IDE-1.5---3rd-party-Hardware-specification
+# - https://github.com/arduino/Arduino/wiki/Arduino-Hardware-Cores-migration-guide-from-1.0-to-1.6
+#
+
+#######################################################################
+# Black Whiteboard (or White Blackboard) R4 is a Uno with an ATmega328pb.
+#######################################################################
+
+blackwhite_r4.name=Black Whiteboard R4
+blackwhite_r4.upload.tool=avrdude-elektor
+blackwhite_r4.upload.protocol=arduino
+blackwhite_r4.upload.maximum_size=32256
+blackwhite_r4.upload.speed=115200
+blackwhite_r4.bootloader.low_fuses=0xff
+blackwhite_r4.bootloader.high_fuses=0xde
+blackwhite_r4.bootloader.extended_fuses=0x05
+blackwhite_r4.bootloader.file=R4/optiboot_atmega328.hex
+blackwhite_r4.bootloader.unlock_bits=0x3f
+blackwhite_r4.bootloader.lock_bits=0x0f
+blackwhite_r4.bootloader.tool=avrdude-elektor
+blackwhite_r4.build.mcu=atmega328pb
+blackwhite_r4.build.f_cpu=16000000L
+blackwhite_r4.build.core=arduino
+blackwhite_r4.build.variant=R4
+blackwhite_r4.build.board=AVR_R4
+
+#######################################################################
+# eRIC Nitro is similar to a Pro or Pro Mini (ATmega328, 3.3V, 8 MHz).
+#######################################################################
+
+ericnitro_r4.name=eRIC Nitro R4
+ericnitro_r4.upload.tool=avrdude-elektor
+ericnitro_r4.upload.protocol=arduino
+ericnitro_r4.upload.maximum_size=32256
+ericnitro_r4.upload.speed=57600
+ericnitro_r4.bootloader.low_fuses=0xff
+ericnitro_r4.bootloader.high_fuses=0xde
+ericnitro_r4.bootloader.extended_fuses=0x05
+ericnitro_r4.bootloader.file=eRIC-Nitro/optiboot_eric_nitro_and_p.hex
+ericnitro_r4.bootloader.unlock_bits=0x3f
+ericnitro_r4.bootloader.lock_bits=0x0f
+ericnitro_r4.bootloader.tool=avrdude-elektor
+ericnitro_r4.build.mcu=atmega328pb
+ericnitro_r4.build.f_cpu=8000000L
+ericnitro_r4.build.core=arduino
+ericnitro_r4.build.variant=eRIC-Nitro-R4
+ericnitro_r4.build.board=AVR_ERIC_NITRO
+

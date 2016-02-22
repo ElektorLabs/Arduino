@@ -4,16 +4,18 @@ This repository contains the package descriptor for Elektor's Arduino compatible
 Supports:
 - Platino (16 MHz)
 - eRIC Nitro (8 MHz)
+- eRIC Nitro R4 (8 MHz with ATmega328PB)
+- Black Whiteboard R4 (Uno-R4, ATmega328PB)
 
 Use the Arduino IDE Boards Manager to install this package, as follows:
 
 - Open the Arduino IDE's Preferences dialog: File -> Preferences
-- Arduino IDE 1.6.6: https://raw.githubusercontent.com/ElektorLabs/arduino/master/package_elektor-labs.com_ide-1.6.6_index.json 
-  Arduino IDE 1.6.5: https://raw.githubusercontent.com/ElektorLabs/arduino/master/package_elektor-labs.com_ide-1.6.5_index.json 
-  Add the one of the two URLs to the edit box "Additional Boards Manager URLs". It is possible to have multiple URLs as long as 
+- Arduino IDE 1.6.6 or higher: https://raw.githubusercontent.com/ElektorLabs/arduino/master/package_elektor_boards_index.json 
+  Add this URL to the edit box "Additional Boards Manager URLs". It is possible to have multiple URLs as long as 
   you separate them with commas.
 - Open the IDE's Boards Manager: Tools -> Board -> Boards Manager
-- As Type (upper left corner) select Contributed. You should now see an entry for Elektor AVR Boards.
+- As Type (upper left corner) select Contributed. You should now see at least one entry for Elektor boards.
+- Click on the entry that you want to install to make the install button appear.
 - Click the Install button to install the boards. Close the dialog when done.
 
 Now when you open the available boards list (Tools -> Board) there will be a header "Elektor Labs" followed by
@@ -28,4 +30,4 @@ Platino without the drivers select "Platino without library" from the boards lis
 Bootloaders for all supported boards and processors are provided in the package. You can burn them with the 
 Arduino as ISP sketch (or any other supported ISP programmer for that matter).
 
-Everything has been tested with Arduino IDE 1.6.5 and 1.6.6.
+Everything has been tested with Arduino IDE 1.6.7.

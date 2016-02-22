@@ -1,0 +1,39 @@
+#######################################
+# Syntax Coloring Map for Platino
+#######################################
+
+#######################################
+# Datatypes (KEYWORD1)
+#######################################
+
+Platino	KEYWORD1	Platino
+
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+
+init	KEYWORD2
+begin	KEYWORD2
+hasDisplay	KEYWORD2
+hasBacklight	KEYWORD2
+hasLedColor	KEYWORD2
+hasLed	KEYWORD2
+hasLedRgb	KEYWORD2
+hasBuzzer	KEYWORD2
+hasPushbutton	KEYWORD2
+hasKnob	KEYWORD2
+pushbuttonRead	KEYWORD2
+pushbuttonClear	KEYWORD2
+knobChanged	KEYWORD2
+knobRead	KEYWORD2
+knobWrite	KEYWORD2
+display	KEYWORD2
+backlight	KEYWORD2
+led	KEYWORD2
+ledRgb	KEYWORD2
+beep	KEYWORD2
+
+#######################################
+# Constants (LITERAL1)
+#######################################
+

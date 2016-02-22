@@ -1,0 +1,581 @@
+#
+# Makefile for "custom" platforms.   Add your board here.
+#
+# * Copyright 2013-2015 by Bill Westfield.  Part of Optiboot.
+# * This software is licensed under version 2 of the Gnu Public Licence.
+# * See optiboot.c for details.
+
+
+wildfire: TARGET = $@
+wildfire: CHIP = atmega1284p
+wildfire:
+	$(MAKE) $(CHIP) AVR_FREQ=16000000L LED=B5
+	mv $(PROGRAM)_$(CHIP).hex $(PROGRAM)_$(TARGET).hex
+	mv $(PROGRAM)_$(CHIP).lst $(PROGRAM)_$(TARGET).lst
+
+#
+# Elektor Platino boards
+#
+
+platino1284p: TARGET = $@
+platino1284p: CHIP = atmega1284p
+platino1284p:
+	$(MAKE) $(CHIP) AVR_FREQ=16000000L LED=B5
+	mv $(PROGRAM)_$(CHIP).hex $(PROGRAM)_$(TARGET).hex
+	mv $(PROGRAM)_$(CHIP).lst $(PROGRAM)_$(TARGET).lst
+
+platino1284_isp: platino1284p
+platino1284_isp: TARGET = platino1284p
+platino1284_isp: MCU_TARGET = atmega1284p
+# 1024 byte boot
+platino1284_isp: HFUSE ?= DE
+# Low power xtal (16MHz) 16KCK/14CK+65ms
+platino1284_isp: LFUSE ?= FF
+# 2.7V brownout
+platino1284_isp: EFUSE ?= FD
+platino1284_isp: isp
+
+########################
+
+# Chip level targets
+#
+# no-suffix & A versions produce identical code.
+# P & PA versions produce identical code.
+atmega644: TARGET = atmega644
+atmega644: MCU_TARGET = atmega644
+atmega644: CFLAGS += $(COMMON_OPTIONS) -DBIGBOOT
+atmega644: AVR_FREQ ?= 16000000L
+atmega644: LDSECTIONS  = -Wl,--section-start=.text=0xfc00 -Wl,--section-start=.version=0xfffe
+atmega644: CFLAGS += $(UART_CMD)
+atmega644: $(PROGRAM)_atmega644.hex
+atmega644: $(PROGRAM)_atmega644.lst
+
+platino644_and_644a: TARGET = $@
+platino644_and_644a: CHIP = atmega644
+platino644_and_644a:
+	$(MAKE) $(CHIP) AVR_FREQ=16000000L LED=B5
+	mv $(PROGRAM)_$(CHIP).hex $(PROGRAM)_$(TARGET).hex
+	mv $(PROGRAM)_$(CHIP).lst $(PROGRAM)_$(TARGET).lst
+
+platino644p_and_644pa: TARGET = $@
+platino644p_and_644pa: CHIP = atmega644p
+platino644p_and_644pa:
+	$(MAKE) $(CHIP) AVR_FREQ=16000000L LED=B5
+	mv $(PROGRAM)_$(CHIP).hex $(PROGRAM)_$(TARGET).hex
+	mv $(PROGRAM)_$(CHIP).lst $(PROGRAM)_$(TARGET).lst
+
+platino644: platino644_and_644a
+platino644a: platino644_and_644a
+platino644p: platino644p_and_644pa
+platino644pa: platino644p_and_644pa
+
+platino644_isp: platino644
+platino644_isp: TARGET = platino644
+platino644_isp: MCU_TARGET = atmega644
+# 1024 byte boot
+platino644_isp: HFUSE ?= DE
+# Low power xtal (16MHz) 16KCK/14CK+65ms
+platino644_isp: LFUSE ?= FF
+# 2.7V brownout
+platino644_isp: EFUSE ?= FD
+platino644_isp: isp
+
+platino644a_isp: platino644_isp
+
+platino644p_isp: platino644p
+platino644p_isp: TARGET = platino644p
+platino644p_isp: MCU_TARGET = atmega644p
+# 1024 byte boot
+platino644p_isp: HFUSE ?= DE
+# Low power xtal (16MHz) 16KCK/14CK+65ms
+platino644p_isp: LFUSE ?= FF
+# 2.7V brownout
+platino644p_isp: EFUSE ?= FD
+platino644p_isp: isp
+
+
+########################
+
+# Chip level target
+#
+# Rule atmega328 compiles for atmega328p so we use atmega328_not_p for atmega328
+atmega328_not_p: TARGET = atmega328
+atmega328_not_p: MCU_TARGET = atmega328
+atmega328_not_p: CFLAGS += $(COMMON_OPTIONS)
+atmega328_not_p: AVR_FREQ ?= 16000000L
+atmega328_not_p: LDSECTIONS  = -Wl,--section-start=.text=0x7e00 -Wl,--section-start=.version=0x7ffe
+atmega328_not_p: $(PROGRAM)_atmega328_not_p.hex
+atmega328_not_p: $(PROGRAM)_atmega328_not_p.lst
+
+platino328_and_p: TARGET = $@
+platino328_and_p: CHIP = atmega328
+platino328_and_p:
+	$(MAKE) $(CHIP) AVR_FREQ=16000000L LED=B5
+	mv $(PROGRAM)_$(CHIP).hex $(PROGRAM)_$(TARGET).hex
+	mv $(PROGRAM)_$(CHIP).lst $(PROGRAM)_$(TARGET).lst
+
+platino328: platino328_and_p
+platino328p: platino328_and_p
+
+platino328_isp: platino328
+platino328_isp: TARGET = platino328
+platino328_isp: MCU_TARGET = atmega328
+# 512 byte boot, SPIEN
+platino328_isp: HFUSE ?= DE
+# Low power xtal (16MHz) 16KCK/14CK+65ms
+platino328_isp: LFUSE ?= FF
+# 2.7V brownout
+platino328_isp: EFUSE ?= 05
+platino328_isp: isp
+
+platino328p_isp: platino328p
+platino328p_isp: TARGET = platino328p
+platino328p_isp: MCU_TARGET = atmega328p
+# 512 byte boot, SPIEN
+platino328_isp: HFUSE ?= DE
+# Low power xtal (16MHz) 16KCK/14CK+65ms
+platino328p_isp: LFUSE ?= FF
+# 2.7V brownout
+platino328p_isp: EFUSE ?= 05
+platino328p_isp: isp
+
+########################
+
+# Chip level target
+#
+# P & A versions produce identical code, PA version is different.
+atmega324p: TARGET = atmega324p
+atmega324p: MCU_TARGET = atmega324p
+atmega324p: CFLAGS += $(COMMON_OPTIONS)
+atmega324p: AVR_FREQ ?= 16000000L
+atmega324p: LDSECTIONS  = -Wl,--section-start=.text=0x7e00 -Wl,--section-start=.version=0x7ffe
+atmega324p: $(PROGRAM)_atmega324p.hex
+atmega324p: $(PROGRAM)_atmega324p.lst
+
+atmega324pa: TARGET = atmega324pa
+atmega324pa: MCU_TARGET = atmega324pa
+atmega324pa: CFLAGS += $(COMMON_OPTIONS)
+atmega324pa: AVR_FREQ ?= 16000000L
+atmega324pa: LDSECTIONS  = -Wl,--section-start=.text=0x7e00 -Wl,--section-start=.version=0x7ffe
+atmega324pa: $(PROGRAM)_atmega324pa.hex
+atmega324pa: $(PROGRAM)_atmega324pa.lst
+
+platino324a_and_324p: TARGET = $@
+platino324a_and_324p: CHIP = atmega324p
+platino324a_and_324p:
+	$(MAKE) $(CHIP) AVR_FREQ=16000000L LED=B5
+	mv $(PROGRAM)_$(CHIP).hex $(PROGRAM)_$(TARGET).hex
+	mv $(PROGRAM)_$(CHIP).lst $(PROGRAM)_$(TARGET).lst
+
+platino324a: platino324a_and_324p
+platino324p: platino324a_and_324p
+
+platino324pa: TARGET = $@
+platino324pa: CHIP = atmega324pa
+platino324pa:
+	$(MAKE) $(CHIP) AVR_FREQ=16000000L LED=B5
+	mv $(PROGRAM)_$(CHIP).hex $(PROGRAM)_$(TARGET).hex
+	mv $(PROGRAM)_$(CHIP).lst $(PROGRAM)_$(TARGET).lst
+
+platino324a_isp: platino324a
+platino324a_isp: TARGET = platino324
+platino324a_isp: MCU_TARGET = atmega324p
+# 512 byte boot, SPIEN
+platino324a_isp: HFUSE ?= DE
+# Low power xtal (16MHz) 16KCK/14CK+65ms
+platino324a_isp: LFUSE ?= FF
+# 2.7V brownout
+platino324a_isp: EFUSE ?= FD
+platino324a_isp: isp
+
+platino324p_isp: platino324a_isp
+
+platino324pa_isp: platino324pa
+platino324pa_isp: TARGET = platino324pa
+platino324pa_isp: MCU_TARGET = atmega324pa
+# 512 byte boot, SPIEN
+platino324pa_isp: HFUSE ?= DE
+# Low power xtal (16MHz) 16KCK/14CK+65ms
+platino324pa_isp: LFUSE ?= FF
+# 2.7V brownout
+platino324pa_isp: EFUSE ?= FD
+platino324pa_isp: isp
+
+########################
+
+# Chip level target
+#
+atmega168a: TARGET = atmega168a
+atmega168a: MCU_TARGET = atmega168a
+atmega168a: CFLAGS += $(COMMON_OPTIONS)
+atmega168a: AVR_FREQ ?= 16000000L 
+atmega168a: $(PROGRAM)_atmega168a.hex
+atmega168a: $(PROGRAM)_atmega168a.lst
+
+# Avoid calling rule with 
+#atmega168_p: TARGET = atmega168p
+#atmega168_p: MCU_TARGET = atmega168p
+#atmega168_p: CFLAGS += $(COMMON_OPTIONS)
+#atmega168_p: AVR_FREQ ?= 16000000L 
+#atmega168_p: $(PROGRAM)_atmega168_p.hex
+#atmega168_p: $(PROGRAM)_atmega168_p.lst
+
+platino168: TARGET = $@
+platino168: CHIP = atmega168
+platino168:
+	$(MAKE) $(CHIP) AVR_FREQ=16000000L LED=B5
+	mv $(PROGRAM)_$(CHIP).hex $(PROGRAM)_$(TARGET).hex
+	mv $(PROGRAM)_$(CHIP).lst $(PROGRAM)_$(TARGET).lst
+
+platino168a: TARGET = $@
+platino168a: CHIP = atmega168a
+platino168a:
+	$(MAKE) $(CHIP) AVR_FREQ=16000000L LED=B5
+	mv $(PROGRAM)_$(CHIP).hex $(PROGRAM)_$(TARGET).hex
+	mv $(PROGRAM)_$(CHIP).lst $(PROGRAM)_$(TARGET).lst
+
+platino168p: TARGET = $@
+platino168p: CHIP = atmega168p
+platino168p:
+	$(MAKE) $(CHIP) AVR_FREQ=16000000L LED=B5
+	mv $(PROGRAM)_$(CHIP)_16MHz.hex $(PROGRAM)_$(TARGET).hex
+	mv $(PROGRAM)_$(CHIP)_16MHz.lst $(PROGRAM)_$(TARGET).lst
+
+platino168_isp: platino168
+platino168_isp: TARGET = platino168
+# 2.7V brownout
+platino168_isp: HFUSE ?= DD
+# Low power xtal (16MHz) 16KCK/14CK+65ms
+platino168_isp: LFUSE ?= FF
+# 512 byte boot
+platino168_isp: EFUSE ?= 04
+platino168_isp: isp
+
+platino168a_isp: platino168a
+platino168a_isp: TARGET = platino168a
+# 2.7V brownout
+platino168a_isp: HFUSE ?= DD
+# Low power xtal (16MHz) 16KCK/14CK+65ms
+platino168a_isp: LFUSE ?= FF
+# 512 byte boot
+platino168a_isp: EFUSE ?= 04
+platino168a_isp: isp
+
+platino168p_isp: platino168p
+platino168p_isp: TARGET = platino168p
+# 2.7V brownout
+platino168p_isp: HFUSE ?= DD
+# Low power xtal (16MHz) 16KCK/14CK+65ms
+platino168p_isp: LFUSE ?= FF
+# 512 byte boot
+platino168p_isp: EFUSE ?= 04
+platino168p_isp: isp
+
+########################
+
+# Chip level target
+#
+# P & A versions produce identical code.
+# PA version is not known by GCC-AVR...
+atmega164p: TARGET = atmega164p
+atmega164p: MCU_TARGET = atmega164p
+atmega164p: CFLAGS += $(COMMON_OPTIONS)
+atmega164p: AVR_FREQ ?= 16000000L 
+atmega164p: $(PROGRAM)_atmega164p.hex
+atmega164p: $(PROGRAM)_atmega164p.lst
+
+platino164_all_variants: TARGET = $@
+platino164_all_variants: CHIP = atmega164p
+platino164_all_variants:
+	$(MAKE) $(CHIP) AVR_FREQ=16000000L LED=B5
+	mv $(PROGRAM)_$(CHIP).hex $(PROGRAM)_$(TARGET).hex
+	mv $(PROGRAM)_$(CHIP).lst $(PROGRAM)_$(TARGET).lst
+
+platino164a: platino164_all_variants
+platino164p: platino164_all_variants
+platino164pa: platino164_all_variants
+
+platino164p_isp: platino164p
+platino164p_isp: TARGET = platino164
+# 2.7V brownout
+platino164p_isp: HFUSE ?= DC
+# Low power xtal (16MHz) 16KCK/14CK+65ms
+platino164p_isp: LFUSE ?= FF
+# 512 byte boot
+platino164p_isp: EFUSE ?= FD
+platino164p_isp: isp
+
+platino164_isp: platino164p_isp
+platino164p_isp: platino164p_isp
+platino164pa_isp: platino164p_isp
+
+########################
+
+# Chip level target
+#
+# P & PA versions produce identical code.
+atmega88p: TARGET = atmega88p
+atmega88p: MCU_TARGET = atmega88p
+atmega88p: CFLAGS += $(COMMON_OPTIONS)
+atmega88p: AVR_FREQ ?= 16000000L 
+atmega88p: LDSECTIONS  = -Wl,--section-start=.text=0x1e00 -Wl,--section-start=.version=0x1ffe -Wl,--gc-sections -Wl,--undefined=optiboot_version
+atmega88p: $(PROGRAM)_atmega88p.hex
+atmega88p: $(PROGRAM)_atmega88p.lst
+
+atmega88a: TARGET = atmega88a
+atmega88a: MCU_TARGET = atmega88a
+atmega88a: CFLAGS += $(COMMON_OPTIONS)
+atmega88a: AVR_FREQ ?= 16000000L 
+atmega88a: LDSECTIONS  = -Wl,--section-start=.text=0x1e00 -Wl,--section-start=.version=0x1ffe -Wl,--gc-sections -Wl,--undefined=optiboot_version
+atmega88a: $(PROGRAM)_atmega88a.hex
+atmega88a: $(PROGRAM)_atmega88a.lst
+
+platino88: TARGET = $@
+platino88: CHIP = atmega88
+platino88:
+	$(MAKE) $(CHIP) AVR_FREQ=16000000L LED=B5
+	mv $(PROGRAM)_$(CHIP).hex $(PROGRAM)_$(TARGET).hex
+	mv $(PROGRAM)_$(CHIP).lst $(PROGRAM)_$(TARGET).lst
+
+platino88p_and_pa: TARGET = $@
+platino88p_and_pa: CHIP = atmega88p
+platino88p_and_pa:
+	$(MAKE) $(CHIP) AVR_FREQ=16000000L LED=B5
+	mv $(PROGRAM)_$(CHIP).hex $(PROGRAM)_$(TARGET).hex
+	mv $(PROGRAM)_$(CHIP).lst $(PROGRAM)_$(TARGET).lst
+
+platino88a: TARGET = $@
+platino88a: CHIP = atmega88a
+platino88a:
+	$(MAKE) $(CHIP) AVR_FREQ=16000000L LED=B5
+	mv $(PROGRAM)_$(CHIP).hex $(PROGRAM)_$(TARGET).hex
+	mv $(PROGRAM)_$(CHIP).lst $(PROGRAM)_$(TARGET).lst
+
+platino88p: platino88p_and_pa
+platino88pa: platino88p_and_pa
+
+platino88_isp: platino88
+platino88_isp: TARGET = platino88
+platino88_isp: MCU_TARGET = atmega88
+# 2.7V brownout
+platino88_isp: HFUSE ?= DD
+# Low power xtal (16MHz) 16KCK/14CK+65ms
+platino88_isp: LFUSE ?= FF
+# 512 byte boot
+platino88_isp: EFUSE ?= 04
+platino88_isp: isp
+
+platino88a_isp: platino88_isp
+
+platino88p_isp: platino88p
+platino88p_isp: TARGET = platino88p
+platino88p_isp: MCU_TARGET = atmega88p
+# 2.7V brownout
+platino88p_isp: HFUSE ?= DD
+# Low power xtal (16MHz) 16KCK/14CK+65ms
+platino88p_isp: LFUSE ?= FF
+# 512 byte boot
+platino88p_isp: EFUSE ?= 04
+platino88p_isp: isp
+
+platino88pa_isp: platino88p_isp
+
+########################
+
+# ATmega48 does not have a bootloader section so no point in making one.
+
+platino48:
+platino48: $(info ATmega48 does not have a bootloader section so no point in making one.)
+
+platino48_isp: platino48
+platino48_isp: TARGET = platino48
+platino48_isp: MCU_TARGET = atmega48
+# SPIEN, 2.7V brownout
+platino48_isp: HFUSE ?= dd
+# Low-power oscillator, 16MHz Xtal, 16KCK/14CK+65ms
+platino48_isp: LFUSE ?= ff
+# Self prog enable
+platino48_isp: EFUSE ?= fe
+platino48_isp: isp
+
+########################
+
+# Chip level target
+#
+# A version is not supported by GCC-AVR.
+atmega32a: TARGET = atmega32a
+atmega32a: MCU_TARGET = atmega32
+atmega32a: CFLAGS += $(COMMON_OPTIONS)
+atmega32a: AVR_FREQ ?= 16000000L
+atmega32a: LDSECTIONS  = -Wl,--section-start=.text=0x7e00 -Wl,--section-start=.version=0x7ffe
+atmega32a: $(PROGRAM)_atmega32a.hex
+atmega32a: $(PROGRAM)_atmega32a.lst
+
+platino32_and_a: TARGET = $@
+platino32_and_a: CHIP = atmega32a
+platino32_and_a:
+	$(MAKE) $(CHIP) AVR_FREQ=16000000L LED=B5
+	mv $(PROGRAM)_$(CHIP).hex $(PROGRAM)_$(TARGET).hex
+	mv $(PROGRAM)_$(CHIP).lst $(PROGRAM)_$(TARGET).lst
+
+platino32: platino32_and_a
+platino32a: platino32_and_a
+         
+platino32_isp: platino32
+platino32_isp: TARGET = platino32
+platino32_isp: MCU_TARGET = atmega32
+# No OCD or JTAG, SPIEN, CKOPT (for full swing xtal), Bootsize=512B
+platino32_isp: HFUSE ?= CE
+# 2.7V brownout, 16MHz Xtal, 16KCK/14CK+65ms
+platino32_isp: LFUSE ?= BF
+platino32_isp: isp
+
+platino32a_isp: platino32_isp
+
+########################
+
+# Chip level target
+#
+# A version is not supported by GCC-AVR.
+atmega16: TARGET = atmega16
+atmega16: MCU_TARGET = atmega16
+atmega16: CFLAGS += $(COMMON_OPTIONS)
+atmega16: AVR_FREQ ?= 16000000L
+atmega16: LDSECTIONS  = -Wl,--section-start=.text=0x3e00 -Wl,--section-start=.version=0x3ffe
+atmega16: $(PROGRAM)_atmega16.hex
+atmega16: $(PROGRAM)_atmega16.lst
+
+platino16_and_a: TARGET = $@
+platino16_and_a: CHIP = atmega16
+platino16_and_a:
+	$(MAKE) $(CHIP) AVR_FREQ=16000000L LED=B5
+	mv $(PROGRAM)_$(CHIP).hex $(PROGRAM)_$(TARGET).hex
+	mv $(PROGRAM)_$(CHIP).lst $(PROGRAM)_$(TARGET).lst
+
+platino16: platino16_and_a
+platino16a: platino16_and_a
+         
+platino16_isp: platino16
+platino16_isp: TARGET = platino16
+platino16_isp: MCU_TARGET = atmega16
+# No OCD or JTAG, SPIEN, Bootsize=512B
+platino16_isp: HFUSE ?= DC
+# 2.7V brownout, 16MHz Xtal, 16KCK/14CK+65ms
+platino16_isp: LFUSE ?= BF
+platino16_isp: isp
+
+platino16a_isp: platino16_isp
+
+########################
+
+# Chip level target
+#
+# A version is not supported by GCC-AVR.
+atmega8a: TARGET = atmega8a
+atmega8a: MCU_TARGET = atmega8a
+atmega8a: CFLAGS += $(COMMON_OPTIONS)
+atmega8a: AVR_FREQ ?= 16000000L 
+atmega8a: LDSECTIONS  = -Wl,--section-start=.text=0x1e00 -Wl,--section-start=.version=0x1ffe -Wl,--gc-sections -Wl,--undefined=optiboot_version
+atmega8a: $(PROGRAM)_atmega8a.hex
+atmega8a: $(PROGRAM)_atmega8a.lst
+
+platino8_and_a: TARGET = $@
+platino8_and_a: CHIP = atmega8
+platino8_and_a:
+	$(MAKE) $(CHIP) AVR_FREQ=16000000L LED=B5
+	mv $(PROGRAM)_$(CHIP).hex $(PROGRAM)_$(TARGET).hex
+	mv $(PROGRAM)_$(CHIP).lst $(PROGRAM)_$(TARGET).lst
+
+platino8: platino8_and_a
+platino8a: platino8_and_a
+
+platino8_isp: atmega8
+platino8_isp: TARGET = platino8
+platino8_isp: MCU_TARGET = atmega8
+# SPIEN, CKOPT (for full swing xtal), Bootsize=512B
+platino8_isp: HFUSE ?= CC
+# 2.7V brownout, 16MHz Xtal, 16KCK/14CK+65ms
+platino8_isp: LFUSE ?= BF
+platino8_isp: isp
+
+platino8a_isp: platino8_isp
+
+########################
+#
+# Build all Platino bootloaders
+#
+########################
+platino_all: platino1284p
+platino_all: platino644
+platino_all: platino644a
+platino_all: platino644p
+platino_all: platino644pa
+platino_all: platino328
+platino_all: platino328p
+platino_all: platino324a
+platino_all: platino324p
+platino_all: platino324pa
+platino_all: platino168
+platino_all: platino168a
+platino_all: platino168p
+platino_all: platino164a
+platino_all: platino164p
+platino_all: platino88
+platino_all: platino88a
+platino_all: platino88p
+platino_all: platino88pa
+platino_all: platino48
+platino_all: platino32
+platino_all: platino32a
+platino_all: platino16
+platino_all: platino16a
+platino_all: platino8
+platino_all: platino8a
+
+#
+# Elektor eRIC Nitro board
+#
+
+eric_nitro_and_p: TARGET = $@
+eric_nitro_and_p: CHIP = atmega328
+eric_nitro_and_p:
+	$(MAKE) $(CHIP) AVR_FREQ=8000000L LED=B1 BAUD_RATE=57600
+	mv $(PROGRAM)_$(CHIP).hex $(PROGRAM)_$(TARGET).hex
+	mv $(PROGRAM)_$(CHIP).lst $(PROGRAM)_$(TARGET).lst
+
+# Same as non-P version.
+eric_nitro: eric_nitro_and_p
+eric_nitro_p: eric_nitro_and_p
+
+eric_nitro_isp: eric_nitro
+eric_nitro_isp: TARGET = eric_nitro
+eric_nitro_isp: MCU_TARGET = atmega328
+# 512 byte boot, SPIEN
+eric_nitro_isp: HFUSE ?= DE
+# Low power resonator (8MHz) 16KCK/14CK+65ms
+eric_nitro_isp: LFUSE ?= FF
+# 2.7V brownout
+eric_nitro_isp: EFUSE ?= 05
+eric_nitro_isp: isp
+
+eric_nitro_p_isp: eric_nitro_p
+eric_nitro_p_isp: TARGET = eric_nitro
+eric_nitro_p_isp: MCU_TARGET = atmega328p
+# 512 byte boot, SPIEN
+eric_nitro_p_isp: HFUSE ?= DE
+# Low power resonator (8MHz) 16KCK/14CK+65ms
+eric_nitro_p_isp: LFUSE ?= FF
+# 2.7V brownout
+eric_nitro_p_isp: EFUSE ?= 05
+eric_nitro_p_isp: isp
+
+eric_nitro_all: eric_nitro
+eric_nitro_all: eric_nitro_p
+
+
+#
+# Elektor all boards
+#
+
+elektor_all: eric_nitro_all
+elektor_all: platino_all
