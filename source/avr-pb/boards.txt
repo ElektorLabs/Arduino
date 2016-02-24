@@ -25,7 +25,7 @@ blackwhite_r4.build.mcu=atmega328pb
 blackwhite_r4.build.f_cpu=16000000L
 blackwhite_r4.build.core=arduino
 blackwhite_r4.build.variant=R4
-blackwhite_r4.build.board=AVR_R4
+blackwhite_r4.build.board=AVR_BLACK_WHITEBOARD_R4
 
 #######################################################################
 # eRIC Nitro is similar to a Pro or Pro Mini (ATmega328, 3.3V, 8 MHz).
@@ -46,6 +46,6 @@ ericnitro_r4.bootloader.tool=avrdude-elektor
 ericnitro_r4.build.mcu=atmega328pb
 ericnitro_r4.build.f_cpu=8000000L
 ericnitro_r4.build.core=arduino
-ericnitro_r4.build.variant=eRIC-Nitro-R4
-ericnitro_r4.build.board=AVR_ERIC_NITRO
+ericnitro_r4.build.variant=R4
+ericnitro_r4.build.board=AVR_ERIC_NITRO_R4
 

@@ -33,12 +33,13 @@
 // Pin  0 -  7: PD0-7
 // Pin  8 - 13: PB0-5
 // Pin 14 - 19: PC0-5
-// Pin 20 - 23: PE0-3
+// Pin 20 - 21: PE2-3
+// Pin 22 - 23: PE0-1
 
 #define NUM_DIGITAL_PINS  (24) // R4 has 24 instead of 20 GPIOs.
 #define NUM_ANALOG_INPUTS   (8) // R4 has 8 instead of 6 analog inputs.
 
-#define analogInputToDigitalPin(p)  ((p < 6)? (p)+14 : (p<8)? (p)+16 : -1)
+#define analogInputToDigitalPin(p)  (((p)<8)? (p)+14 : -1)
 
 #define digitalPinHasPWM(p)  (((p)>=0 && (p)<=3) || (p)==5 || (p)==6 || (p)==9 || (p)==10 || (p)==11)
 
@@ -53,8 +54,8 @@ static const uint8_t MOSI0 = 11; // PB3
 static const uint8_t MISO0 = 12; // PB4
 static const uint8_t SCK0  = 13; // PB5
 // SPI1
-static const uint8_t SS1   = 22; // PE2
-static const uint8_t MOSI1 = 23; // PE3
+static const uint8_t SS1   = 20; // PE2
+static const uint8_t MOSI1 = 21; // PE3
 static const uint8_t MISO1 = 14; // PC0
 static const uint8_t SCK1  = 15; // PC1
 
@@ -65,8 +66,8 @@ static const uint8_t SCL = 19; // PC5
 static const uint8_t SDA0 = 18; // PC4
 static const uint8_t SCL0 = 19; // PC5
 // I2C1
-static const uint8_t SDA1 = 20; // PE0
-static const uint8_t SCL1 = 21; // PE1
+static const uint8_t SDA1 = 22; // PE0
+static const uint8_t SCL1 = 23; // PE1
 
 // Analog inputs
 static const uint8_t A0 = 14; // PC0
@@ -75,15 +76,15 @@ static const uint8_t A2 = 16; // PC2
 static const uint8_t A3 = 17; // PC3
 static const uint8_t A4 = 18; // PC4
 static const uint8_t A5 = 19; // PC5
-static const uint8_t A6 = 22; // PE2
-static const uint8_t A7 = 23; // PE3
+static const uint8_t A6 = 20; // PE2
+static const uint8_t A7 = 21; // PE3
 
 // Pin Change Interrupt
 #define digitalPinToPCICR(p)    (((p)>=0 && (p)<=23) ? (&PCICR) : ((uint8_t *)0))
                                 // Port D         Port B          Port C     Port C
 #define digitalPinToPCICRbit(p) (((p)<=7)? 2 : (((p)<=13)? 0 : (((p)<=19)? 1 : 3)))
 #define digitalPinToPCMSK(p)    (((p)<=7)? (&PCMSK2) : (((p)<=13)? (&PCMSK0) : (((p)<=19)? (&PCMSK1) : (((p)<=23)? (&PCMSK3) : ((uint8_t *)0)))))
-#define digitalPinToPCMSKbit(p) (((p)<=7)? (p) : (((p)<=13)? ((p)-8) : (((p)<=19)? ((p)-14) : ((p)-20))))
+#define digitalPinToPCMSKbit(p) (((p)<=7)? (p) : (((p)<=13)? ((p)-8) : (((p)<=19)? ((p)-14) : ((p)<=21)? ((p)-17) : ((p)-22)))))
 
 #define digitalPinToInterrupt(p)  ((p) == 2 ? 0 : ((p) == 3 ? 1 : NOT_AN_INTERRUPT))
 
@@ -168,10 +169,10 @@ const uint8_t PROGMEM digital_pin_to_bit_mask_PGM[] = {
 	_BV(3),
 	_BV(4),
 	_BV(5),
-	_BV(0), /* 20, port E */
-	_BV(1),
-	_BV(2),
-	_BV(3),
+	_BV(2), /* 20, port E, PE2 is AD6 */
+	_BV(3), // PE3 is AD7
+	_BV(0), // PE0
+	_BV(1), // PE1
 };
 
 const uint8_t PROGMEM digital_pin_to_timer_PGM[] = {
