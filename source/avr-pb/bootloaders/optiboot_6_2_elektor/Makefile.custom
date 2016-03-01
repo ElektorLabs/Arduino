@@ -24,6 +24,14 @@ platino1284p:
 	mv $(PROGRAM)_$(CHIP).hex $(PROGRAM)_$(TARGET).hex
 	mv $(PROGRAM)_$(CHIP).lst $(PROGRAM)_$(TARGET).lst
 
+# Experimental, on demand, untested.
+platino1284p_12MHz: TARGET = $@
+platino1284p_12MHz: CHIP = atmega1284p
+platino1284p_12MHz:
+	$(MAKE) $(CHIP) AVR_FREQ=12000000L LED=B5 BAUD_RATE=115200
+	mv $(PROGRAM)_$(CHIP).hex $(PROGRAM)_$(TARGET).hex
+	mv $(PROGRAM)_$(CHIP).lst $(PROGRAM)_$(TARGET).lst
+
 platino1284_isp: platino1284p
 platino1284_isp: TARGET = platino1284p
 platino1284_isp: MCU_TARGET = atmega1284p
@@ -385,7 +393,7 @@ platino88pa_isp: platino88p_isp
 # ATmega48 does not have a bootloader section so no point in making one.
 
 platino48:
-platino48: $(info ATmega48 does not have a bootloader section so no point in making one.)
+	$(info ATmega48 does not have a bootloader section so no point in making one.)
 
 platino48_isp: platino48
 platino48_isp: TARGET = platino48
@@ -547,6 +555,13 @@ eric_nitro_and_p:
 eric_nitro: eric_nitro_and_p
 eric_nitro_p: eric_nitro_and_p
 
+eric_nitro_pb: TARGET = $@
+eric_nitro_pb: CHIP = atmega328pb
+eric_nitro_pb:
+	$(MAKE) $(CHIP) AVR_FREQ=8000000L LED=B1 BAUD_RATE=57600
+	mv $(PROGRAM)_$(CHIP).hex $(PROGRAM)_$(TARGET).hex
+	mv $(PROGRAM)_$(CHIP).lst $(PROGRAM)_$(TARGET).lst
+
 eric_nitro_isp: eric_nitro
 eric_nitro_isp: TARGET = eric_nitro
 eric_nitro_isp: MCU_TARGET = atmega328
@@ -569,9 +584,92 @@ eric_nitro_p_isp: LFUSE ?= FF
 eric_nitro_p_isp: EFUSE ?= 05
 eric_nitro_p_isp: isp
 
+eric_nitro_pb_isp: eric_nitro_pb
+eric_nitro_pb_isp: TARGET = eric_nitro_r4
+eric_nitro_pb_isp: MCU_TARGET = atmega328pb
+# 512 byte boot, SPIEN
+eric_nitro_pb_isp: HFUSE ?= DE
+# Low power resonator (8MHz) 16KCK/14CK+65ms
+eric_nitro_pb_isp: LFUSE ?= FF
+# 2.7V brownout
+eric_nitro_pb_isp: EFUSE ?= 05
+eric_nitro_pb_isp: isp
+
 eric_nitro_all: eric_nitro
 eric_nitro_all: eric_nitro_p
+eric_nitro_all: eric_nitro_pb
 
+#
+# Elektor AVR Playground
+#
+
+avr_playground_and_p: TARGET = $@
+avr_playground_and_p: CHIP = atmega328
+avr_playground_and_p:
+	$(MAKE) $(CHIP) AVR_FREQ=8000000L LED=B5 BAUD_RATE=57600
+	mv $(PROGRAM)_$(CHIP).hex $(PROGRAM)_$(TARGET).hex
+	mv $(PROGRAM)_$(CHIP).lst $(PROGRAM)_$(TARGET).lst
+
+# Same as non-P version.
+avr_playground: avr_playground_and_p
+avr_playground_p: avr_playground_and_p
+
+avr_playground_isp: avr_playground
+avr_playground_isp: TARGET = avr_playground
+avr_playground_isp: MCU_TARGET = atmega328
+# 512 byte boot, SPIEN
+avr_playground_isp: HFUSE ?= DE
+# Internal oscillator (8MHz) 6CK/14CK+65ms
+avr_playground_isp: LFUSE ?= E2
+# 2.7V brownout
+avr_playground_isp: EFUSE ?= 05
+avr_playground_isp: isp
+
+avr_playground_p_isp: avr_playground_p
+avr_playground_p_isp: TARGET = avr_playground
+avr_playground_p_isp: MCU_TARGET = atmega328p
+# 512 byte boot, SPIEN
+avr_playground_p_isp: HFUSE ?= DE
+# Internal oscillator (8MHz) 6CK/14CK+65ms
+avr_playground_isp: LFUSE ?= E2
+# 2.7V brownout
+avr_playground_p_isp: EFUSE ?= 05
+avr_playground_p_isp: isp
+
+avr_playground_all: avr_playground
+avr_playground_all: avr_playground_p
+
+#
+# Elektor Black Whiteboard R4
+#
+
+# Chip level target
+#
+atmega328pb: TARGET = atmega328pb
+atmega328pb: MCU_TARGET = atmega328pb
+atmega328pb: CFLAGS += $(COMMON_OPTIONS)
+atmega328pb: AVR_FREQ ?= 16000000L
+atmega328pb: LDSECTIONS  = -Wl,--section-start=.text=0x7e00 -Wl,--section-start=.version=0x7ffe
+atmega328pb: $(PROGRAM)_atmega328pb.hex
+atmega328pb: $(PROGRAM)_atmega328pb.lst
+
+black_whiteboard_r4: TARGET = $@
+black_whiteboard_r4: CHIP = atmega328pb
+black_whiteboard_r4:
+	$(MAKE) $(CHIP) AVR_FREQ=16000000L LED=B5
+	mv $(PROGRAM)_$(CHIP).hex $(PROGRAM)_$(TARGET).hex
+	mv $(PROGRAM)_$(CHIP).lst $(PROGRAM)_$(TARGET).lst
+
+black_whiteboard_r4_isp: black_whiteboard_r4
+black_whiteboard_r4_isp: TARGET = black_whiteboard_r4
+black_whiteboard_r4_isp: MCU_TARGET = atmega328pb
+# 512 byte boot, SPIEN
+black_whiteboard_r4_isp: HFUSE ?= DE
+# Low power xtal (16MHz) 16KCK/14CK+65ms
+black_whiteboard_r4_isp: LFUSE ?= FF
+# 2.7V brownout
+black_whiteboard_r4_isp: EFUSE ?= 05
+black_whiteboard_r4_isp: isp
 
 #
 # Elektor all boards
@@ -579,3 +677,5 @@ eric_nitro_all: eric_nitro_p
 
 elektor_all: eric_nitro_all
 elektor_all: platino_all
+elektor_all: avr_playground_all
+elektor_all: black_whiteboard_r4

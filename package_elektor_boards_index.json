@@ -48,8 +48,8 @@
           "category": "Contributed",
           "url": "https://raw.githubusercontent.com/ElektorLabs/arduino/master/elektor-boards-avr-pb-1.0.0.zip",
           "archiveFileName": "elektor-boards-avr-pb-1.0.0.zip",
-          "checksum": "SHA-256:534fc2b01f8d5339eb0853379eea60884b93f3fe2a03deb7ea1e7785c8200cc4",
-          "size": "165819",
+          "checksum": "SHA-256:0878ddb6583b80d638c92dc306a363c95f49106f23477e48fab18838ea4dd285",
+          "size": "166539",
           "help": {
                     "online": "http://www.elektor-labs.com"
           },
@@ -93,8 +93,8 @@
               "host": "i686-mingw32",
               "url": "https://raw.githubusercontent.com/ElektorLabs/arduino/master/avrdude-6.0.1-windows.zip",
               "archiveFileName": "avrdude-6.0.1-windows.zip",
-              "size": "243849",
-              "checksum": "SHA-256:e26cb38a939b3c84320c7b2462dfec306247b0e5e2e39209cdbd1a11326a1790"
+              "size": "243812",
+              "checksum": "SHA-256:48811feea62c3a6532baebbef8c7ecb64802e8daabe05a5416ceb2479324dc86"
             }
           ]
         }
