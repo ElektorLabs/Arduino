@@ -203,6 +203,16 @@ void analogWrite(uint8_t pin, int val)
 				// connect pwm to pin on timer 3, channel B
 				sbi(TCCR3A, COM3B1);
 				OCR3B = val; // set pwm duty
+                                #if defined(__AVR_ATmega328PB__)
+				  // On the ATmega328PB setting COM3B1 activates the OCM
+				  // that defaults to AND mode. Because Timer4B is not 
+				  // activated PD2 will not output anything. We now have 
+				  // two options:
+				  // - also start Timer4B with identical settings
+				  // - set PORTD2 to activate OR mode
+				  // Lets go for the second option.
+				  sbi(PORTD,2);
+			        #endif
 				break;
 			#endif
 
@@ -230,6 +240,16 @@ void analogWrite(uint8_t pin, int val)
 				// connect pwm to pin on timer 4, channel B
 				sbi(TCCR4A, COM4B1);
 				OCR4B = val; // set pwm duty
+                                #if defined(__AVR_ATmega328PB__)
+				  // On the ATmega328PB setting COM4B1 activates the OCM
+				  // that defaults to AND mode. Because Timer3B is not 
+				  // activated PD2 will not output anything. We now have 
+				  // two options:
+				  // - also start Timer3B with identical settings
+				  // - set PORTD2 to activate OR mode
+				  // Lets go for the second option.
+				  sbi(PORTD,2);
+			        #endif
 				break;
 			#endif
 
