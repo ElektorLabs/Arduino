@@ -47,10 +47,10 @@
           "architecture": "avrpb",
           "version": "1.0.0",
           "category": "Contributed",
-          "url": "https://raw.githubusercontent.com/ElektorLabs/arduino/master/elektor-boards-avr-pb-1.0.0.zip",
-          "archiveFileName": "elektor-boards-avr-pb-1.0.0.zip",
-          "checksum": "SHA-256:8739c76e681f900923b900c9df0ef75cf421d39cabb54650c4b9ad19b6a76d85",
-          "size": "22",
+          "url": "https://raw.githubusercontent.com/ElektorLabs/arduino/master/elektor-boards-avrpb-1.0.0.zip",
+          "archiveFileName": "elektor-boards-avrpb-1.0.0.zip",
+          "checksum": "SHA-256:a38359b940edf0f4695e43746d3135808336e4736347ba73b0691a1c3bafc94c",
+          "size": "166546",
           "help": {
                     "online": "http://www.elektor-labs.com"
           },
