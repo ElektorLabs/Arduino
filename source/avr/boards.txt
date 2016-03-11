@@ -1,9 +1,32 @@
-# Elektor Platino, eRIC Nitro Board Configuration
+# Elektor Platino, eRIC Nitro, AVF Playground Board Configuration
 #
 # For more information see:
 # - https://github.com/arduino/Arduino/wiki/Arduino-IDE-1.5---3rd-party-Hardware-specification
 # - https://github.com/arduino/Arduino/wiki/Arduino-Hardware-Cores-migration-guide-from-1.0-to-1.6
 #
+
+#######################################################################
+# AVR Playground runs from internal clock (ATmega328, 8 MHz).
+#######################################################################
+
+avr-playground.name=AVR Playground
+avr-playground.upload.tool=arduino:avrdude
+avr-playground.upload.protocol=arduino
+avr-playground.upload.maximum_size=32256
+avr-playground.upload.speed=57600
+avr-playground.bootloader.low_fuses=0xe2
+avr-playground.bootloader.high_fuses=0xde
+avr-playground.bootloader.extended_fuses=0x05
+avr-playground.bootloader.file=AVR-Playground/optiboot_avr_playground.hex
+avr-playground.bootloader.unlock_bits=0x3f
+avr-playground.bootloader.lock_bits=0x0f
+avr-playground.bootloader.tool=arduino:avrdude
+avr-playground.build.mcu=atmega328p
+avr-playground.build.f_cpu=8000000L
+avr-playground.build.core=arduino:arduino
+avr-playground.build.variant=AVR-Playground
+avr-playground.build.board=AVR_PLAYGROUND
+
 
 #######################################################################
 # eRIC Nitro is similar to a Pro or Pro Mini (ATmega328, 3.3V, 8 MHz).
