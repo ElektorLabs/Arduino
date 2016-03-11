@@ -43,10 +43,10 @@
         },
         {
           "name": "Elektor AVR-PB boards",
-          "architecture": "avr-pb",
+          "architecture": "avr_pb",
           "version": "1.0.0",
           "category": "Contributed",
-          "url": "https://raw.githubusercontent.com/ElektorLabs/arduino/master/elektor-boards-avr-pb-1.0.0.zip",
+          "url": "https://raw.githubusercontent.com/firmware32/arduino/master/elektor-boards-avr-pb-1.0.0.zip",
           "archiveFileName": "elektor-boards-avr-pb-1.0.0.zip",
           "checksum": "SHA-256:a675123b17ea29fecf3e7af032b0da482c9fcad645be4aadf2366e782d53ba67",
           "size": "166729",
