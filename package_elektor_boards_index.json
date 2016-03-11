@@ -25,6 +25,7 @@
                     "online": "http://www.elektor-labs.com"
           },
           "boards": [
+            {"name": "AVR Playground"},
             {"name": "eRIC Nitro"},
             {"name": "Platino"}
           ],
