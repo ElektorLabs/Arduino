@@ -4,6 +4,7 @@ This repository contains the package descriptor for Elektor's Arduino compatible
 Supports:
 - Platino (16 MHz)
 - eRIC Nitro (8 MHz)
+- AVR Playground (8 MHz)
 - eRIC Nitro R4 (8 MHz with ATmega328PB)
 - Black Whiteboard R4 (Uno-R4, ATmega328PB)
 
