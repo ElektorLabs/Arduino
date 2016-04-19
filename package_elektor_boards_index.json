@@ -19,8 +19,8 @@
           },
           "url": "https://raw.githubusercontent.com/ElektorLabs/arduino/master/elektor-boards-avr-1.0.0.zip",
           "archiveFileName": "elektor-boards-avr-1.0.0.zip",
-          "checksum": "SHA-256:1d75b37ccbd76d45a4aab54bc1bce8b515cc3554b6799f10cadfeed1b265b052",
-          "size": "202255",
+          "checksum": "SHA-256:b8d41fa14e1c05d4a240ad794408cdbd76b1fc8bee0b8b530bf09bace63f41da",
+          "size": "202263",
           "help": {
                     "online": "http://www.elektor-labs.com"
           },
@@ -49,13 +49,13 @@
           "category": "Contributed",
           "url": "https://raw.githubusercontent.com/ElektorLabs/arduino/master/elektor-boards-avrpb-1.0.0.zip",
           "archiveFileName": "elektor-boards-avrpb-1.0.0.zip",
-          "checksum": "SHA-256:a38359b940edf0f4695e43746d3135808336e4736347ba73b0691a1c3bafc94c",
-          "size": "166546",
+          "checksum": "SHA-256:eda5b51fd10cb9859baff235d3d9de8c4c719612827226c9dc77554be12486f2",
+          "size": "166139",
           "help": {
                     "online": "http://www.elektor-labs.com"
           },
           "boards": [
-            {"name": "Black Whiteboard R4"},
+            {"name": "Elektor Uno R4"},
             {"name": "eRIC Nitro R4"}
           ],
           "toolsDependencies": [
@@ -67,7 +67,7 @@
             {
               "packager": "Elektor",
               "name": "avrdude-elektor",
-              "version": "6.0.1-elektor"
+              "version": "6.3.0-elektor"
             }
           ]
         }
@@ -88,14 +88,14 @@
         },
         {
           "name": "avrdude-elektor",
-          "version": "6.0.1-elektor",
+          "version": "6.3.0-elektor",
           "systems": [
             {
               "host": "i686-mingw32",
-              "url": "https://raw.githubusercontent.com/ElektorLabs/arduino/master/avrdude-6.0.1-windows.zip",
-              "archiveFileName": "avrdude-6.0.1-windows.zip",
-              "size": "243812",
-              "checksum": "SHA-256:48811feea62c3a6532baebbef8c7ecb64802e8daabe05a5416ceb2479324dc86"
+              "url": "https://raw.githubusercontent.com/ElektorLabs/arduino/master/avrdude-6.3.0-windows.zip",
+              "archiveFileName": "avrdude-6.3.0-windows.zip",
+              "size": "269090",
+              "checksum": "SHA-256:ed61fa2209711c3a09c5fa9b8004be2a9e69769771d8470ba147d50bac55626d"
             }
           ]
         }

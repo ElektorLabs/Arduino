@@ -6,7 +6,7 @@ Supports:
 - eRIC Nitro (8 MHz)
 - AVR Playground (8 MHz)
 - eRIC Nitro R4 (8 MHz with ATmega328PB)
-- Black Whiteboard R4 (Uno-R4, ATmega328PB)
+- Elektor Uno R4 (like Arduino Uno R3 but with ATmega328PB)
 
 Use the Arduino IDE Boards Manager to install this package, as follows:
 
@@ -33,5 +33,7 @@ Bootloaders for all supported boards and processors are provided in the package.
 Arduino as ISP sketch (or any other supported ISP programmer for that matter).
 
 Everything has been tested with Arduino IDE 1.6.7.
+
+Do not use Arduino IDE 1.6.8 because it has a serious serial port problem.
 
 P.S. Previous JSON files with a version number in their name have been replaced by "package_elektor_boards_index.json"

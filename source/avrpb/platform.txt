@@ -1,4 +1,4 @@
-# Elektor Black Whiteboard R4, Platino, eRIC Nitro (R4) Platform Configuration
+# Elektor Uno R4, Platino, eRIC Nitro (R4) Platform Configuration
 #
 # For more information see:
 # - https://github.com/arduino/Arduino/wiki/Arduino-IDE-1.5---3rd-party-Hardware-specification
@@ -87,9 +87,9 @@ recipe.size.regex.eeprom=^(?:\.eeprom)\s+([0-9]+).*
 # AVR Uploader/Programmers tools
 # ------------------------------
 
-tools.avrdude-elektor.path={runtime.tools.avrdude-elektor-6.0.1-elektor.path}
-tools.avrdude-elektor.cmd.path={runtime.tools.avrdude-elektor-6.0.1-elektor.path}/bin/avrdude
-tools.avrdude-elektor.config.path={runtime.tools.avrdude-elektor-6.0.1-elektor.path}/etc/avrdude.conf
+tools.avrdude-elektor.path={runtime.tools.avrdude-elektor-6.3.0-elektor.path}
+tools.avrdude-elektor.cmd.path={runtime.tools.avrdude-elektor-6.3.0-elektor.path}/bin/avrdude
+tools.avrdude-elektor.config.path={runtime.tools.avrdude-elektor-6.3.0-elektor.path}/etc/avrdude.conf
 
 tools.avrdude-elektor.upload.params.verbose=-v -v -v -v
 tools.avrdude-elektor.upload.params.quiet=-q -q
@@ -109,7 +109,7 @@ tools.avrdude-elektor.bootloader.pattern="{cmd.path}" "-C{config.path}" {bootloa
 
 # ------------------------------
 
-#tools.avrdude.path={runtime.tools.avrdude-elektor-6.0.1-elektor.path}
+#tools.avrdude.path={runtime.tools.avrdude-elektor-6.3.0-elektor.path}
 tools.avrdude.path={runtime.tools.avrdude.path}
 tools.avrdude.cmd.path={path}/bin/avrdude
 

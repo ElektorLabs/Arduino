@@ -1,4 +1,4 @@
-# Elektor eRIC Nitro R4, Black Whiteboard R4 Board Configuration
+# Elektor eRIC Nitro R4, Elektor Uno R4 Board Configuration
 #
 # For more information see:
 # - https://github.com/arduino/Arduino/wiki/Arduino-IDE-1.5---3rd-party-Hardware-specification
@@ -6,26 +6,26 @@
 #
 
 #######################################################################
-# Black Whiteboard (or White Blackboard) R4 is a Uno with an ATmega328pb.
+# Elektor Uno R4 is an Arduino Uno with an ATmega328pb.
 #######################################################################
 
-blackwhite_r4.name=Black Whiteboard R4
-blackwhite_r4.upload.tool=avrdude-elektor
-blackwhite_r4.upload.protocol=arduino
-blackwhite_r4.upload.maximum_size=32256
-blackwhite_r4.upload.speed=115200
-blackwhite_r4.bootloader.low_fuses=0xff
-blackwhite_r4.bootloader.high_fuses=0xde
-blackwhite_r4.bootloader.extended_fuses=0x05
-blackwhite_r4.bootloader.file=R4/optiboot_black_whiteboard_r4.hex
-blackwhite_r4.bootloader.unlock_bits=0x3f
-blackwhite_r4.bootloader.lock_bits=0x0f
-blackwhite_r4.bootloader.tool=avrdude-elektor
-blackwhite_r4.build.mcu=atmega328pb
-blackwhite_r4.build.f_cpu=16000000L
-blackwhite_r4.build.core=arduino
-blackwhite_r4.build.variant=R4
-blackwhite_r4.build.board=AVR_BLACK_WHITEBOARD_R4
+elektor_uno_r4.name=Elektor Uno R4
+elektor_uno_r4.upload.tool=avrdude-elektor
+elektor_uno_r4.upload.protocol=arduino
+elektor_uno_r4.upload.maximum_size=32256
+elektor_uno_r4.upload.speed=115200
+elektor_uno_r4.bootloader.low_fuses=0xff
+elektor_uno_r4.bootloader.high_fuses=0xde
+elektor_uno_r4.bootloader.extended_fuses=0x05
+elektor_uno_r4.bootloader.file=R4/optiboot_elektor_uno_r4.hex
+elektor_uno_r4.bootloader.unlock_bits=0x3f
+elektor_uno_r4.bootloader.lock_bits=0x0f
+elektor_uno_r4.bootloader.tool=avrdude-elektor
+elektor_uno_r4.build.mcu=atmega328pb
+elektor_uno_r4.build.f_cpu=16000000L
+elektor_uno_r4.build.core=arduino
+elektor_uno_r4.build.variant=R4
+elektor_uno_r4.build.board=AVR_ELEKTOR_UNO_R4
 
 #######################################################################
 # eRIC Nitro is similar to a Pro or Pro Mini (ATmega328, 3.3V, 8 MHz).

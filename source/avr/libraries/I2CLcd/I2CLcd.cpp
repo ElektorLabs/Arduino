@@ -27,7 +27,7 @@ I2CLcd::I2CLcd(uint8_t resetPin, uint8_t backlightPin)
 
 void I2CLcd::begin(void)
 {
-	int i;
+	//int i;
 
 	// Release LCD.
 	delay(10);
@@ -76,7 +76,7 @@ uint8_t I2CLcd::putChar(char ch)
 }
 
 
-uint8_t I2CLcd::putString(char *p_str)
+uint8_t I2CLcd::putString(char const *p_str)
 {
 	uint8_t result = 0;
 

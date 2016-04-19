@@ -118,7 +118,7 @@ public:
 	void reset(bool deassert) { digitalWrite(m_resetPin,deassert); }
 	void backlight(bool on) { digitalWrite(m_backlightPin,on); }
 	uint8_t putChar(char ch);
-	uint8_t putString(char *p_str);
+	uint8_t putString(char const *p_str);
 	void clear(void);
 	void cursorMove(uint8_t line, uint8_t column);
 	void cursor(uint8_t line, uint8_t column);
