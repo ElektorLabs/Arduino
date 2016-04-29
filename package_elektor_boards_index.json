@@ -19,8 +19,8 @@
           },
           "url": "https://raw.githubusercontent.com/ElektorLabs/arduino/master/elektor-boards-avr-1.0.0.zip",
           "archiveFileName": "elektor-boards-avr-1.0.0.zip",
-          "checksum": "SHA-256:b8d41fa14e1c05d4a240ad794408cdbd76b1fc8bee0b8b530bf09bace63f41da",
-          "size": "202263",
+          "checksum": "SHA-256:dd8f876a1e273a974171acfd48f8827eede70e001e9fc756f56235e081ee3d37",
+          "size": "251662",
           "help": {
                     "online": "http://www.elektor-labs.com"
           },
@@ -49,8 +49,8 @@
           "category": "Contributed",
           "url": "https://raw.githubusercontent.com/ElektorLabs/arduino/master/elektor-boards-avrpb-1.0.0.zip",
           "archiveFileName": "elektor-boards-avrpb-1.0.0.zip",
-          "checksum": "SHA-256:eda5b51fd10cb9859baff235d3d9de8c4c719612827226c9dc77554be12486f2",
-          "size": "166139",
+          "checksum": "SHA-256:a18039b01a63916eb45761ea65bc07fa6894bbd1c49515fc9e127d7940493a82",
+          "size": "191840",
           "help": {
                     "online": "http://www.elektor-labs.com"
           },
