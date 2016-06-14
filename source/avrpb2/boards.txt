@@ -1,0 +1,31 @@
+# Elektor Uno R4 Board Configuration
+#
+# For more information see:
+# - https://github.com/arduino/Arduino/wiki/Arduino-IDE-1.5-3rd-party-Hardware-specification
+# - https://github.com/arduino/Arduino/wiki/Arduino-Hardware-Cores-migration-guide-from-1.0-to-1.6
+#
+
+# This is a hack to use the ATmega328PB as if it was an ATmega328P
+
+#######################################################################
+# Elektor Uno R4 is an Arduino Uno with an ATmega328pb.
+#######################################################################
+
+elektor_uno_r4.name=Elektor Uno R4
+elektor_uno_r4.upload.tool=avrdude_no_signature
+elektor_uno_r4.upload.protocol=arduino
+elektor_uno_r4.upload.maximum_size=32256
+elektor_uno_r4.upload.maximum_data_size=2048
+elektor_uno_r4.upload.speed=115200
+elektor_uno_r4.bootloader.low_fuses=0xff
+elektor_uno_r4.bootloader.high_fuses=0xde
+elektor_uno_r4.bootloader.extended_fuses=0x05
+elektor_uno_r4.bootloader.file=R4/optiboot_elektor_uno_r4.hex
+elektor_uno_r4.bootloader.unlock_bits=0x3f
+elektor_uno_r4.bootloader.lock_bits=0x0f
+elektor_uno_r4.bootloader.tool=avrdude_no_signature
+elektor_uno_r4.build.mcu=atmega328p
+elektor_uno_r4.build.f_cpu=16000000L
+elektor_uno_r4.build.core=arduino
+elektor_uno_r4.build.variant=R4
+elektor_uno_r4.build.board=AVR_ELEKTOR_UNO_R4
