@@ -27,6 +27,8 @@
 
 #include <avr/pgmspace.h>
 
+#include "avr/iom328p.h"
+
 #undef LED_BUILTIN
 #define LED_BUILTIN  (13)
 
