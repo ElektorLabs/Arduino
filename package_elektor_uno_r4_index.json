@@ -25,7 +25,7 @@
                     "online": "http://www.elektor-labs.com"
           },
           "boards": [
-            {"name": "Uno R4 (ATmega328PB"}
+            {"name": "Uno R4"}
           ],
           "toolsDependencies": [
             {
