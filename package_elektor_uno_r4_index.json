@@ -10,7 +10,7 @@
       },
       "platforms": [
         {
-          "name": "Elektor Uno R4",
+          "name": "Elektor Uno R4 (with ATmega328PB)",
           "architecture": "avr",
           "version": "1.0.0",
           "category": "Contributed",
@@ -25,7 +25,7 @@
                     "online": "http://www.elektor-labs.com"
           },
           "boards": [
-            {"name": "Uno R4"}
+            {"name": "Uno R4 (ATmega328PB"}
           ],
           "toolsDependencies": [
             {
