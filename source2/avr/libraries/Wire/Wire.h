@@ -91,6 +91,8 @@ class TwoWire : public Stream
 extern TwoWire Wire;
 extern TwoWire Wire1;
 #define Wire0  Wire
+#define I2C0  Wire
+#define I2C1  Wire1
 
 #endif
 

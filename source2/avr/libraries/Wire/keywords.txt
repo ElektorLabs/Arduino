@@ -25,6 +25,8 @@ onRequest	KEYWORD2
 Wire	KEYWORD2
 Wire0	KEYWORD2
 Wire1	KEYWORD2
+I2C0	KEYWORD2
+I2C1	KEYWORD2
 
 #######################################
 # Constants (LITERAL1)
