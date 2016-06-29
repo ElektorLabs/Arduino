@@ -39,6 +39,37 @@
               "version": "6.0.1-arduino5"
             }
           ]
+        },
+        {
+          "name": "Elektor Uno R4 (with ATmega328PB)",
+          "architecture": "avr",
+          "version": "1.0.1",
+          "category": "Contributed",
+          "help": {
+            "online": "http://www.elektor-labs.com"
+          },
+          "url": "https://raw.githubusercontent.com/ElektorLabs/arduino/master/elektor-uno-r4-1.0.1.zip",
+          "archiveFileName": "elektor-uno-r4-1.0.1.zip",
+          "checksum": "SHA-256:83d6056cf1804c1a887265dec964c7e840f6e877e3ee074c0424d59feb3c705e",
+          "size": "202692",
+          "help": {
+                    "online": "http://www.elektor-labs.com"
+          },
+          "boards": [
+            {"name": "Uno R4"}
+          ],
+          "toolsDependencies": [
+            {
+              "packager": "arduino",
+              "name": "avr-gcc",
+              "version": "4.8.1-arduino5"
+            },
+            {
+              "packager": "arduino",
+              "name": "avrdude",
+              "version": "6.0.1-arduino5"
+            }
+          ]
         }
       ],
       "tools":[]
