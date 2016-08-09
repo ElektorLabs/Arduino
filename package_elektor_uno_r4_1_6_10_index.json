@@ -10,7 +10,7 @@
       },
       "platforms": [
         {
-          "name": "Elektor Uno R4 (with ATmega328PB)",
+          "name": "Elektor Uno R4 (with ATmega328PB) for Arduino 1.6.10",
           "architecture": "avr",
           "version": "1.0.0",
           "category": "Contributed",
