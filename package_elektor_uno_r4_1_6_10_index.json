@@ -1,7 +1,7 @@
 {
   "packages": [
     {
-      "name": "Elektor-Uno-R4",
+      "name": "Elektor-Uno-R4-for-Arduino-1.6.10",
       "maintainer": "Elektor.Labs",
       "websiteURL": "https://github.com/ElektorLabs/arduino/",
       "email": "info@elektor-labs.com",
