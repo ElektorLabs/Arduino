@@ -19,13 +19,13 @@
           },
           "url": "https://raw.githubusercontent.com/ElektorLabs/arduino/master/elektor-uno-r4-1.6.10-1.0.0.zip",
           "archiveFileName": "elektor-uno-r4-1.6.10-1.0.0.zip",
-          "checksum": "SHA-256:445a4d69963c2071d2ec845c9d771555e22bb0d20dad86a509679af18e002de7",
-          "size": "203726",
+          "checksum": "SHA-256:5e61a717c9dbfb4d43b137ca310136ce738bcde5c1f5a6cb09be2c6923b0903a",
+          "size": "203152",
           "help": {
                     "online": "http://www.elektor-labs.com"
           },
           "boards": [
-            {"name": "Uno R4"}
+            {"name": "Elektor Uno R4"}
           ],
           "toolsDependencies": [
             {
