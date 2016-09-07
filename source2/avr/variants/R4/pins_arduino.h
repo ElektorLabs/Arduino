@@ -86,7 +86,7 @@ static const uint8_t A7 = 21; // PE3
                                 // Port D         Port B          Port C     Port C
 #define digitalPinToPCICRbit(p) (((p)<=7)? 2 : (((p)<=13)? 0 : (((p)<=19)? 1 : 3)))
 #define digitalPinToPCMSK(p)    (((p)<=7)? (&PCMSK2) : (((p)<=13)? (&PCMSK0) : (((p)<=19)? (&PCMSK1) : (((p)<=23)? (&PCMSK3) : ((uint8_t *)0)))))
-#define digitalPinToPCMSKbit(p) (((p)<=7)? (p) : (((p)<=13)? ((p)-8) : (((p)<=19)? ((p)-14) : ((p)<=21)? ((p)-17) : ((p)-22)))))
+#define digitalPinToPCMSKbit(p) (((p)<=7)? (p) : (((p)<=13)? ((p)-8) : (((p)<=19)? ((p)-14) : ((p)<=21)? ((p)-17) : ((p)-22))))
 
 #define digitalPinToInterrupt(p)  ((p) == 2 ? 0 : ((p) == 3 ? 1 : NOT_AN_INTERRUPT))
 
