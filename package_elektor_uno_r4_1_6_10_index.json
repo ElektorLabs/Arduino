@@ -56,7 +56,7 @@
                     "online": "http://www.elektor-labs.com"
           },
           "boards": [
-            {"name": "Elektor Uno R4 @ 16 MHz"}
+            {"name": "Elektor Uno R4 @ 16 MHz"},
             {"name": "Elektor Uno R4 @ 8 MHz"}
           ],
           "toolsDependencies": [
