@@ -86,11 +86,15 @@ recipe.size.regex.eeprom=^(?:\.eeprom)\s+([0-9]+).*
 
 ## CPV recipes
 # Backup atmega328p crt file
-recipe.hooks.linking.prelink.1.pattern="{compiler.path}{compiler.objcopy.cmd}" "{runtime.tools.avr-gcc.path}/avr/lib/avr5/crtm328p.o" "{runtime.tools.avr-gcc.path}/avr/lib/avr5/crtm328p.bak"
+# No, this causes problems since the toolchain got included in the arduino's own package. What a horrible mess is this platform crap :(
+# recipe.hooks.linking.prelink.1.pattern="{compiler.path}{compiler.objcopy.cmd}" "{runtime.tools.avr-gcc.path}/avr/lib/avr5/crtm328p.o" "{runtime.tools.avr-gcc.path}/avr/lib/avr5/crtm328p.bak"
 # Replace atmega328p crt file by atmega328pb crt file
+recipe.hooks.linking.prelink.1.pattern="{compiler.path}{compiler.objcopy.cmd}" "{runtime.platform.path}/crtatmega328pb.o" "{runtime.tools.avr-gcc.path}/avr/lib/avr5/crtatmega328p.o"
 recipe.hooks.linking.prelink.2.pattern="{compiler.path}{compiler.objcopy.cmd}" "{runtime.platform.path}/crtatmega328pb.o" "{runtime.tools.avr-gcc.path}/avr/lib/avr5/crtm328p.o"
 # Restore atmega328p crt file
-recipe.hooks.linking.postlink.1.pattern="{compiler.path}{compiler.objcopy.cmd}" "{runtime.tools.avr-gcc.path}/avr/lib/avr5/crtm328p.bak" "{runtime.tools.avr-gcc.path}/avr/lib/avr5/crtm328p.o"
+# recipe.hooks.linking.postlink.1.pattern="{compiler.path}{compiler.objcopy.cmd}" "{runtime.tools.avr-gcc.path}/avr/lib/avr5/crtm328p.bak" "{runtime.tools.avr-gcc.path}/avr/lib/avr5/crtm328p.o"
+recipe.hooks.linking.postlink.1.pattern="{compiler.path}{compiler.objcopy.cmd}" "{runtime.platform.path}/crtatmega328p.o" "{runtime.tools.avr-gcc.path}/avr/lib/avr5/crtatmega328p.o"
+recipe.hooks.linking.postlink.2.pattern="{compiler.path}{compiler.objcopy.cmd}" "{runtime.platform.path}/crtm328p.o" "{runtime.tools.avr-gcc.path}/avr/lib/avr5/crtm328p.o"
 
 # AVR Uploader/Programmers tools
 # ------------------------------

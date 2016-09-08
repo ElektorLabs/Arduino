@@ -43,7 +43,7 @@
 
 #define analogInputToDigitalPin(p)  (((p)<8)? (p)+14 : -1)
 
-#define digitalPinHasPWM(p)  (((p)>=0 && (p)<=3) || (p)==5 || (p)==6 || (p)==9 || (p)==10 || (p)==11)
+#define digitalPinHasPWM(p)  ((p)<=3) || (p)==5 || (p)==6 || (p)==9 || (p)==10 || (p)==11)
 
 // SPI, SPI is also SPI0
 static const uint8_t SS   = 10; // PB2
@@ -82,7 +82,7 @@ static const uint8_t A6 = 20; // PE2
 static const uint8_t A7 = 21; // PE3
 
 // Pin Change Interrupt
-#define digitalPinToPCICR(p)    (((p)>=0 && (p)<=23) ? (&PCICR) : ((uint8_t *)0))
+#define digitalPinToPCICR(p)    (((p)<=23) ? (&PCICR) : ((uint8_t *)0))
                                 // Port D         Port B          Port C     Port C
 #define digitalPinToPCICRbit(p) (((p)<=7)? 2 : (((p)<=13)? 0 : (((p)<=19)? 1 : 3)))
 #define digitalPinToPCMSK(p)    (((p)<=7)? (&PCMSK2) : (((p)<=13)? (&PCMSK0) : (((p)<=19)? (&PCMSK1) : (((p)<=23)? (&PCMSK3) : ((uint8_t *)0)))))

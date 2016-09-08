@@ -11,15 +11,15 @@
 # Elektor Uno R4 is an Arduino Uno with an ATmega328pb.
 #######################################################################
 
-elektor_uno_r4.name=Elektor Uno R4
+elektor_uno_r4.name=Elektor Uno R4 @ 16 MHz
 elektor_uno_r4.upload.tool=avrdude_no_signature
 elektor_uno_r4.upload.protocol=arduino
 elektor_uno_r4.upload.maximum_size=32256
 elektor_uno_r4.upload.maximum_data_size=2048
 elektor_uno_r4.upload.speed=115200
-elektor_uno_r4.bootloader.low_fuses=0xff
-elektor_uno_r4.bootloader.high_fuses=0xde
 elektor_uno_r4.bootloader.extended_fuses=0x05
+elektor_uno_r4.bootloader.high_fuses=0xde
+elektor_uno_r4.bootloader.low_fuses=0xff
 elektor_uno_r4.bootloader.file=R4/optiboot_elektor_uno_r4.hex
 elektor_uno_r4.bootloader.unlock_bits=0x3f
 elektor_uno_r4.bootloader.lock_bits=0x0f
@@ -31,19 +31,19 @@ elektor_uno_r4.build.variant=R4
 elektor_uno_r4.build.board=AVR_ELEKTOR_UNO_R4
 
 #######################################################################
-# Elektor Uno R4 on 8 MHz internal oscillator.
+# Elektor Uno R4 on 8 MHz external oscillator.
 #######################################################################
 
 elektor_uno_r4_8mhz.name=Elektor Uno R4 @ 8 MHz
 elektor_uno_r4_8mhz.upload.tool=avrdude_no_signature
 elektor_uno_r4_8mhz.upload.protocol=arduino
-elektor_uno_r4_8mhz.upload.maximum_size=30720
+elektor_uno_r4_8mhz.upload.maximum_size=32256
 elektor_uno_r4_8mhz.upload.maximum_data_size=2048
 elektor_uno_r4_8mhz.upload.speed=57600
+elektor_uno_r4_8mhz.bootloader.extended_fuses=0x05
+elektor_uno_r4_8mhz.bootloader.high_fuses=0xde
 elektor_uno_r4_8mhz.bootloader.low_fuses=0xff
-elektor_uno_r4_8mhz.bootloader.high_fuses=0xda
-elektor_uno_r4_8mhz.bootloader.extended_fuses=0xe2
-elektor_uno_r4_8mhz.bootloader.file=R4/ATmegaBOOT_168_atmega328_pro_8MHz.hex
+elektor_uno_r4_8mhz.bootloader.file=R4/optiboot_elektor_uno_r4_8mhz.hex
 elektor_uno_r4_8mhz.bootloader.unlock_bits=0x3f
 elektor_uno_r4_8mhz.bootloader.lock_bits=0x0f
 elektor_uno_r4_8mhz.bootloader.tool=avrdude_no_signature
@@ -52,3 +52,26 @@ elektor_uno_r4_8mhz.build.f_cpu=8000000L
 elektor_uno_r4_8mhz.build.core=arduino
 elektor_uno_r4_8mhz.build.variant=R4
 elektor_uno_r4_8mhz.build.board=AVR_ELEKTOR_UNO_R4
+
+#######################################################################
+# Elektor Uno R4 on 8 MHz internal oscillator.
+#######################################################################
+
+elektor_uno_r4_8mhz_intrcosc.name=Elektor Uno R4 @ 8 MHz (internal RC)
+elektor_uno_r4_8mhz_intrcosc.upload.tool=avrdude_no_signature
+elektor_uno_r4_8mhz_intrcosc.upload.protocol=arduino
+elektor_uno_r4_8mhz_intrcosc.upload.maximum_size=32256
+elektor_uno_r4_8mhz_intrcosc.upload.maximum_data_size=2048
+elektor_uno_r4_8mhz_intrcosc.upload.speed=57600
+elektor_uno_r4_8mhz_intrcosc.bootloader.extended_fuses=0x05
+elektor_uno_r4_8mhz_intrcosc.bootloader.high_fuses=0xde
+elektor_uno_r4_8mhz_intrcosc.bootloader.low_fuses=0xe2
+elektor_uno_r4_8mhz_intrcosc.bootloader.file=R4/optiboot_elektor_uno_r4_8mhz.hex
+elektor_uno_r4_8mhz_intrcosc.bootloader.unlock_bits=0x3f
+elektor_uno_r4_8mhz_intrcosc.bootloader.lock_bits=0x0f
+elektor_uno_r4_8mhz_intrcosc.bootloader.tool=avrdude_no_signature
+elektor_uno_r4_8mhz_intrcosc.build.mcu=atmega328p
+elektor_uno_r4_8mhz_intrcosc.build.f_cpu=8000000L
+elektor_uno_r4_8mhz_intrcosc.build.core=arduino
+elektor_uno_r4_8mhz_intrcosc.build.variant=R4
+elektor_uno_r4_8mhz_intrcosc.build.board=AVR_ELEKTOR_UNO_R4

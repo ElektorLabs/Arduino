@@ -640,7 +640,7 @@ avr_playground_all: avr_playground
 avr_playground_all: avr_playground_p
 
 #
-# Elektor Black Whiteboard R4
+# Elektor Uno R4
 #
 
 # Chip level target
@@ -653,23 +653,52 @@ atmega328pb: LDSECTIONS  = -Wl,--section-start=.text=0x7e00 -Wl,--section-start=
 atmega328pb: $(PROGRAM)_atmega328pb.hex
 atmega328pb: $(PROGRAM)_atmega328pb.lst
 
-black_whiteboard_r4: TARGET = $@
-black_whiteboard_r4: CHIP = atmega328pb
-black_whiteboard_r4:
+atmega328pb_8mhz: TARGET = atmega328pb
+atmega328pb_8mhz: MCU_TARGET = atmega328pb
+atmega328pb_8mhz: CFLAGS += $(COMMON_OPTIONS)
+atmega328pb_8mhz: AVR_FREQ ?= 8000000L
+atmega328pb_8mhz: LDSECTIONS  = -Wl,--section-start=.text=0x7e00 -Wl,--section-start=.version=0x7ffe
+atmega328pb_8mhz: $(PROGRAM)_atmega328pb_8mhz.hex
+atmega328pb_8mhz: $(PROGRAM)_atmega328pb_8mhz.lst
+
+elektor_uno_r4: TARGET = $@
+elektor_uno_r4: CHIP = atmega328pb
+elektor_uno_r4:
 	$(MAKE) $(CHIP) AVR_FREQ=16000000L LED=B5
 	mv $(PROGRAM)_$(CHIP).hex $(PROGRAM)_$(TARGET).hex
 	mv $(PROGRAM)_$(CHIP).lst $(PROGRAM)_$(TARGET).lst
 
-black_whiteboard_r4_isp: black_whiteboard_r4
-black_whiteboard_r4_isp: TARGET = black_whiteboard_r4
-black_whiteboard_r4_isp: MCU_TARGET = atmega328pb
+elektor_uno_r4_8mhz: TARGET = $@
+elektor_uno_r4_8mhz: CHIP = atmega328pb
+elektor_uno_r4_8mhz:
+	$(MAKE) $(CHIP) AVR_FREQ=8000000L LED=B5 BAUD_RATE=57600
+	mv $(PROGRAM)_$(CHIP).hex $(PROGRAM)_$(TARGET).hex
+	mv $(PROGRAM)_$(CHIP).lst $(PROGRAM)_$(TARGET).lst
+
+elektor_uno_r4_isp: elektor_uno_r4
+elektor_uno_r4_isp: TARGET = elektor_uno_r4
+elektor_uno_r4_isp: MCU_TARGET = atmega328pb
 # 512 byte boot, SPIEN
-black_whiteboard_r4_isp: HFUSE ?= DE
+elektor_uno_r4_isp: HFUSE ?= DE
 # Low power xtal (16MHz) 16KCK/14CK+65ms
-black_whiteboard_r4_isp: LFUSE ?= FF
+elektor_uno_r4_isp: LFUSE ?= FF
 # 2.7V brownout
-black_whiteboard_r4_isp: EFUSE ?= 05
-black_whiteboard_r4_isp: isp
+elektor_uno_r4_isp: EFUSE ?= 05
+elektor_uno_r4_isp: isp
+
+elektor_uno_r4_isp_8mhz: elektor_uno_r4_8mhz
+elektor_uno_r4_isp_8mhz: TARGET = elektor_uno_r4_8mhz
+elektor_uno_r4_isp_8mhz: MCU_TARGET = atmega328pb
+# 512 byte boot, SPIEN
+elektor_uno_r4_isp_8mhz: HFUSE ?= DE
+# Internal oscillator (8MHz) 6CK/14CK+65ms
+elektor_uno_r4_isp_8mhz: LFUSE ?= E2
+# 2.7V brownout
+elektor_uno_r4_isp_8mhz: EFUSE ?= 05
+elektor_uno_r4_isp_8mhz: isp
+
+elektor_uno_r4_all: elektor_uno_r4
+elektor_uno_r4_all: elektor_uno_r4_8mhz
 
 #
 # Elektor all boards
@@ -678,4 +707,4 @@ black_whiteboard_r4_isp: isp
 elektor_all: eric_nitro_all
 elektor_all: platino_all
 elektor_all: avr_playground_all
-elektor_all: black_whiteboard_r4
+elektor_all: elektor_uno_r4_all
