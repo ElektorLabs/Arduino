@@ -1,5 +1,5 @@
 /*
-  package.h - Chip package definitions.
+  devices.h - Chip package definitions.
 
   Copyright (c) 2011, 2015 Clemens Valens
 

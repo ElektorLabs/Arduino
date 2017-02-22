@@ -239,11 +239,11 @@ static int8_t toneBegin(uint8_t _pin)
 
 
 // frequency (in hertz) and duration (in milliseconds).
-
-void tone(uint8_t _pin, unsigned int frequency, unsigned long duration)
+// CPV: made frequency unsigned long instead of unsigned int to allow for higher frequencies.
+void tone(uint8_t _pin, unsigned long frequency, unsigned long duration)
 {
   uint8_t prescalarbits = 0b001;
-  long toggle_count = 0;
+  uint32_t toggle_count = 0; // CPV - changed long to uint32_t
   uint32_t ocr = 0;
   int8_t _timer;
 
@@ -353,7 +353,7 @@ void tone(uint8_t _pin, unsigned int frequency, unsigned long duration)
     }
     else
     {
-      toggle_count = -1;
+      toggle_count = (uint32_t)-1; // CPV - added typecast.
     }
 
     // Set the OCR for the given timer,
@@ -385,6 +385,7 @@ void tone(uint8_t _pin, unsigned int frequency, unsigned long duration)
 
 #if defined(OCR2A) && defined(TIMSK2) && defined(OCIE2A)
       case 2:
+        TCNT2 = 0; // CPV - make sure first period is correct too.
         OCR2A = ocr;
         timer2_toggle_count = toggle_count;
         bitWrite(TIMSK2, OCIE2A, 1);

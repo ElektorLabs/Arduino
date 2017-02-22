@@ -105,6 +105,9 @@ void analogWrite(uint8_t pin, int val)
 	// for consistenty with Wiring, which doesn't require a pinMode
 	// call for the analog output pins.
 	pinMode(pin, OUTPUT);
+	/* CPV - unnecessary check cripling flexibility. The switch default statement
+	         already handles pins without PWM capabilities. The value of 255 is
+	         handled by the timers itself that are all in 8-bit mode.
 	if (val == 0)
 	{
 		digitalWrite(pin, LOW);
@@ -113,7 +116,7 @@ void analogWrite(uint8_t pin, int val)
 	{
 		digitalWrite(pin, HIGH);
 	}
-	else
+	else*/
 	{
 		switch(digitalPinToTimer(pin))
 		{
@@ -129,7 +132,14 @@ void analogWrite(uint8_t pin, int val)
 			#if defined(TCCR0A) && defined(COM0A1)
 			case TIMER0A:
 				// connect pwm to pin on timer 0, channel A
-				sbi(TCCR0A, COM0A1);
+				if (val==0) 
+				{
+					// CPV - invert output to allow real 0%.
+					val=255; 
+					sbi(TCCR0A,COM0A0);
+				}
+				else cbi(TCCR0A,COM0A0);
+				sbi(TCCR0A,COM0A1);
 				OCR0A = val; // set pwm duty
 				break;
 			#endif
@@ -137,6 +147,13 @@ void analogWrite(uint8_t pin, int val)
 			#if defined(TCCR0A) && defined(COM0B1)
 			case TIMER0B:
 				// connect pwm to pin on timer 0, channel B
+				if (val==0) 
+				{
+					// CPV - invert output to allow real 0%.
+					val=255; 
+					sbi(TCCR0A,COM0B0);
+				}
+				else cbi(TCCR0A,COM0B0);
 				sbi(TCCR0A, COM0B1);
 				OCR0B = val; // set pwm duty
 				break;
