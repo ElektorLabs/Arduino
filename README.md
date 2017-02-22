@@ -13,7 +13,7 @@ URLs for the IDE:
   https://raw.githubusercontent.com/ElektorLabs/arduino/master/package_elektor_boards_index.json
 - Elektor Uno R4 only (Windows/Linux/Mac), Arduino IDE 1.6.7 & 1.6.9 (do not use 1.6.8): 
   https://raw.githubusercontent.com/ElektorLabs/arduino/master/package_elektor_uno_r4_index.json
-- Elektor Uno R4 only (Windows/Linux/Mac), Arduino IDE 1.6.1x: 
+- Elektor Uno R4 only (preferred, Windows/Linux/Mac), Arduino IDE 1.6.1x & 1.8.x: 
   https://raw.githubusercontent.com/ElektorLabs/arduino/master/package_elektor_uno_r4_1_6_10_index.json
  
 Use the Arduino IDE Boards Manager to install this package, as follows:
@@ -37,12 +37,8 @@ Platino without the drivers select "Platino without library" from the boards lis
 Bootloaders for all supported boards and processors are provided in the package. You can burn them with the 
 Arduino as ISP sketch (or any other supported ISP programmer for that matter).
 
-Everything has been tested with Arduino IDE 1.6.7 and 1.6.11.
+Everything has been tested with several Arduino IDEs from 1.6.7 and up. Do not use 1.7.x (no Boards Manager).
 
 Do not use Arduino IDE 1.6.8 because it has a serious serial port problem.
-
-Since 1.6.10 & 1.6.11 we occasionally run into a strange linker error "ld returned 5 exit status". This is a 
-known long-standing but unresolved issue unrelated to your code but to something unknown. Switch to 1.6.7 if you 
-run into this problem.
 
 P.S. Previous JSON files with a version number in their name have been replaced by "package_elektor_boards_index.json"
