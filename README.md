@@ -14,7 +14,7 @@ URLs for the IDE:
 - Elektor Uno R4 only (Windows/Linux/Mac), Arduino IDE 1.6.7 & 1.6.9 (do not use 1.6.8): 
   https://raw.githubusercontent.com/ElektorLabs/arduino/master/package_elektor_uno_r4_index.json
 - Elektor Uno R4 only (preferred, Windows/Linux/Mac), Arduino IDE 1.6.1x & 1.8.x: 
-  https://raw.githubusercontent.com/ElektorLabs/arduino/master/package_elektor_uno_r4_1_6_10_index.json
+  https://github.com/ElektorLabs/Arduino/releases/download/v1.0.0/package_elektor_uno_r4_1_8_x_index.json
  
 Use the Arduino IDE Boards Manager to install this package, as follows:
 - Open the Arduino IDE's Preferences dialog: File -> Preferences
