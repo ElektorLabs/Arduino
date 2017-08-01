@@ -1,16 +1,15 @@
 # Elektor AVR Board Package for Arduino IDE
-This repository contains the package descriptor for Elektor's Arduino compatible boards.
+This repository contains the package descriptors for Elektor's Arduino compatible boards.
 
 Supports:
 - Platino (16 MHz)
 - eRIC Nitro (8 MHz)
 - AVR Playground (8 MHz)
-- eRIC Nitro R4 (8 MHz with ATmega328PB)
 - Elektor Uno R4 (like Arduino Uno R3 but with ATmega328PB, 8 MHz & 16 MHz)
 
 URLs for the IDE:
-- All boards, but Windows-only for the Elektor Uno R4:
-  https://raw.githubusercontent.com/ElektorLabs/arduino/master/package_elektor_boards_index.json
+- All boards, except the Elektor Uno R4:
+  https://github.com/ElektorLabs/Arduino/releases/download/v1.0.0/package_elektor_index.json
 - Elektor Uno R4 only (Windows/Linux/Mac), Arduino IDE 1.6.7 & 1.6.9 (do not use 1.6.8): 
   https://raw.githubusercontent.com/ElektorLabs/arduino/master/package_elektor_uno_r4_index.json
 - Elektor Uno R4 only (preferred, Windows/Linux/Mac), Arduino IDE 1.6.1x & 1.8.x: 
@@ -41,4 +40,4 @@ Everything has been tested with several Arduino IDEs from 1.6.7 and up. Do not u
 
 Do not use Arduino IDE 1.6.8 because it has a serious serial port problem.
 
-P.S. Previous JSON files with a version number in their name have been replaced by "package_elektor_boards_index.json"
+P.S. Previous JSON files with a version number in their name have been replaced by "package_elektor_index.json"
