@@ -8,17 +8,15 @@ Supports:
 - Elektor Uno R4 (like Arduino Uno R3 but with ATmega328PB, 8 MHz & 16 MHz)
 
 URLs for the IDE:
-- All boards, except the Elektor Uno R4:
+- AVR Playground, Platino & eRIC Nitro:
   https://github.com/ElektorLabs/Arduino/releases/download/v1.0.0/package_elektor_index.json
-- Elektor Uno R4 only (Windows/Linux/Mac), Arduino IDE 1.6.7 & 1.6.9 (do not use 1.6.8): 
-  https://raw.githubusercontent.com/ElektorLabs/arduino/master/package_elektor_uno_r4_index.json
-- Elektor Uno R4 only (preferred, Windows/Linux/Mac), Arduino IDE 1.6.1x & 1.8.x: 
+- Elektor Uno R4 only, Arduino IDE 1.6.1x & 1.8.x: 
   https://github.com/ElektorLabs/Arduino/releases/download/v1.0.0/package_elektor_uno_r4_1_8_x_index.json
  
 Use the Arduino IDE Boards Manager to install this package, as follows:
 - Open the Arduino IDE's Preferences dialog: File -> Preferences
 - Add one (or all, separate multiple URLs with commas) of the URLs above to the edit box 
-  "Additional Boards Manager URLs" (Arduino IDE 1.6.6 or higher).
+  "Additional Boards Manager URLs" (Arduino IDE 1.6.6 or higher, or 1.8.x or higher, not 1.7.x).
 - Open the IDE's Boards Manager: Tools -> Board -> Boards Manager
 - As Type (upper left corner) select Contributed. You should now see at least one entry for Elektor boards.
 - Click on the entry that you want to install to make the install button appear.
