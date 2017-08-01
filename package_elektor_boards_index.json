@@ -12,12 +12,12 @@
         {
           "name": "Elektor AVR boards",
           "architecture": "avr",
-          "version": "1.0.0",
+          "version": "1.0.1",
           "category": "Contributed",
           "help": {
             "online": "http://www.elektor-labs.com"
           },
-          "url": "https://raw.githubusercontent.com/ElektorLabs/arduino/master/elektor-boards-avr-1.0.0.zip",
+          "url": "https://github.com/ElektorLabs/Arduino/releases/download/v1.0.0/elektor-boards-avr-1.0.0.zip",
           "archiveFileName": "elektor-boards-avr-1.0.0.zip",
           "checksum": "SHA-256:e493f016711dab7763c08527069956ccfdfb5d9ac28de750e1e9c00967077102",
           "size": "258043",
@@ -41,65 +41,9 @@
               "version": "6.0.1-arduino5"
             }
           ]
-        },
-        {
-          "name": "Elektor AVR-PB boards",
-          "architecture": "avrpb",
-          "version": "1.0.0",
-          "category": "Contributed",
-          "url": "https://raw.githubusercontent.com/ElektorLabs/arduino/master/elektor-boards-avrpb-1.0.0.zip",
-          "archiveFileName": "elektor-boards-avrpb-1.0.0.zip",
-          "checksum": "SHA-256:c1565edb7e3849e56beb0d3f58ca1ea365e310a60da11e7d385cefdce39a57c0",
-          "size": "197367",
-          "help": {
-                    "online": "http://www.elektor-labs.com"
-          },
-          "boards": [
-            {"name": "Elektor Uno R4"},
-            {"name": "eRIC Nitro R4"}
-          ],
-          "toolsDependencies": [
-            {
-              "packager": "Elektor",
-              "name": "avr-gcc-elektor",
-              "version": "4.9.2-elektor"
-            },
-            {
-              "packager": "Elektor",
-              "name": "avrdude-elektor",
-              "version": "6.3.0-elektor"
-            }
-          ]
         }
       ],
-      "tools":[
-        {
-          "name": "avr-gcc-elektor",
-          "version": "4.9.2-elektor",
-          "systems": [
-            {
-              "host": "i686-mingw32",
-              "url": "https://raw.githubusercontent.com/ElektorLabs/arduino/master/avr-gcc-4.9.2-i686-mingw32.zip",
-              "archiveFileName": "avr-gcc-4.9.2-i686-mingw32.zip",
-              "size": "69087309",
-              "checksum": "SHA-256:99733b3d2e78c1bfda69d7f886489b9b3d223a5212fa6f985eccf4c02f6d314d"
-            }
-          ]
-        },
-        {
-          "name": "avrdude-elektor",
-          "version": "6.3.0-elektor",
-          "systems": [
-            {
-              "host": "i686-mingw32",
-              "url": "https://raw.githubusercontent.com/ElektorLabs/arduino/master/avrdude-6.3.0-windows.zip",
-              "archiveFileName": "avrdude-6.3.0-windows.zip",
-              "size": "269090",
-              "checksum": "SHA-256:ed61fa2209711c3a09c5fa9b8004be2a9e69769771d8470ba147d50bac55626d"
-            }
-          ]
-        }
-      ]
+      "tools":[]
     }
   ]
 }
