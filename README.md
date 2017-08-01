@@ -16,7 +16,7 @@ URLs for the IDE:
 Use the Arduino IDE Boards Manager to install this package, as follows:
 - Open the Arduino IDE's Preferences dialog: File -> Preferences
 - Add one (or all, separate multiple URLs with commas) of the URLs above to the edit box 
-  "Additional Boards Manager URLs" (Arduino IDE 1.6.6 or higher, or 1.8.x or higher, not 1.7.x).
+  "Additional Boards Manager URLs" (Arduino IDE 1.6.6 or higher, or 1.8.x, not 1.7.x).
 - Open the IDE's Boards Manager: Tools -> Board -> Boards Manager
 - As Type (upper left corner) select Contributed. You should now see at least one entry for Elektor boards.
 - Click on the entry that you want to install to make the install button appear.
