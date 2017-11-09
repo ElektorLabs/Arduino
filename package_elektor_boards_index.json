@@ -50,10 +50,10 @@
           "help": {
             "online": "http://www.elektor-labs.com"
           },
-          "url": "https://github.com/ElektorLabs/Arduino/releases/download/v1.0.0/elektor-boards-avr-1.0.0.zip",
-          "archiveFileName": "elektor-boards-avr-1.0.0.zip",
-          "checksum": "SHA-256:e493f016711dab7763c08527069956ccfdfb5d9ac28de750e1e9c00967077102",
-          "size": "258043",
+          "url": "https://github.com/ElektorLabs/Arduino/releases/download/v1.0.0/elektor-boards-avr-1.0.2.zip",
+          "archiveFileName": "elektor-boards-avr-1.0.2.zip",
+          "checksum": "SHA-256:d3deca2bbb7739a8519774b441aca69cd03e7fa2de83ce49756267ec1deb67b4",
+          "size": "258018",
           "help": {
                     "online": "http://www.elektor-labs.com"
           },
@@ -66,12 +66,12 @@
             {
               "packager": "arduino",
               "name": "avr-gcc",
-              "version": "4.9.2-atmel3.5.3-arduino2"
+              "version": "4.9.2-atmel3.5.4-arduino2"
             },
             {
               "packager": "arduino",
               "name": "avrdude",
-              "version": "4.9.2-atmel3.5.3-arduino2"
+              "version": "4.9.2-atmel3.5.4-arduino2"
             }
           ]
         }
