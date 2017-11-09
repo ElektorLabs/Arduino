@@ -61,7 +61,7 @@
             {"name": "AVR Playground"},
             {"name": "eRIC Nitro"},
             {"name": "Platino"}
-          ],
+          ]
         },
         {
           "name": "Elektor AVR boards",
@@ -95,7 +95,7 @@
               "version": "4.9.2-atmel3.5.3-arduino2"
             }
           ]
-        },
+        }
       ],
       "tools":[]
     }
