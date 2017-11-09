@@ -71,7 +71,7 @@
             {
               "packager": "arduino",
               "name": "avrdude",
-              "version": "4.9.2-atmel3.5.4-arduino2"
+              "version": "6.3.0-arduino9"
             }
           ]
         }
