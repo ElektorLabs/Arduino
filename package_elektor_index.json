@@ -1,0 +1,82 @@
+{
+  "packages": [
+    {
+      "name": "Elektor",
+      "maintainer": "Elektor.Labs",
+      "websiteURL": "https://github.com/ElektorLabs/arduino/",
+      "email": "info@elektor-labs.com",
+      "help": {
+        "online": "http://www.elektor-labs.com"
+      },
+      "platforms": [
+        {
+          "name": "Elektor AVR boards",
+          "architecture": "avr",
+          "version": "1.0.1",
+          "category": "Contributed",
+          "help": {
+            "online": "http://www.elektor-labs.com"
+          },
+          "url": "https://github.com/ElektorLabs/Arduino/releases/download/v1.0.0/elektor-boards-avr-1.0.0.zip",
+          "archiveFileName": "elektor-boards-avr-1.0.0.zip",
+          "checksum": "SHA-256:e493f016711dab7763c08527069956ccfdfb5d9ac28de750e1e9c00967077102",
+          "size": "258043",
+          "help": {
+                    "online": "http://www.elektor-labs.com"
+          },
+          "boards": [
+            {"name": "AVR Playground"},
+            {"name": "eRIC Nitro"},
+            {"name": "Platino"}
+          ],
+          "toolsDependencies": [
+            {
+              "packager": "arduino",
+              "name": "avr-gcc",
+              "version": "4.8.1-arduino5"
+            },
+            {
+              "packager": "arduino",
+              "name": "avrdude",
+              "version": "6.0.1-arduino5"
+            }
+          ]
+        },
+        {
+          "name": "Elektor AVR boards",
+          "architecture": "avr",
+          "version": "1.0.2",
+          "category": "Contributed",
+          "help": {
+            "online": "http://www.elektor-labs.com"
+          },
+          "url": "https://github.com/ElektorLabs/Arduino/releases/download/v1.0.1/elektor-boards-avr-1.0.2.zip",
+          "archiveFileName": "elektor-boards-avr-1.0.2.zip",
+          "checksum": "SHA-256:d3deca2bbb7739a8519774b441aca69cd03e7fa2de83ce49756267ec1deb67b4",
+          "size": "258018",
+          "help": {
+                    "online": "http://www.elektor-labs.com"
+          },
+          "boards": [
+            {"name": "AVR Playground"},
+            {"name": "eRIC Nitro"},
+            {"name": "Platino"}
+          ],
+          "toolsDependencies": [
+            {
+              "packager": "arduino",
+              "name": "avr-gcc",
+              "version": "4.9.2-atmel3.5.4-arduino2"
+            },
+            {
+              "packager": "arduino",
+              "name": "avrdude",
+              "version": "4.9.2-atmel3.5.4-arduino2"
+            }
+          ]
+        }
+      ],
+      "tools":[]
+    }
+  ]
+}
