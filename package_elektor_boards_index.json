@@ -74,6 +74,39 @@
               "version": "6.3.0-arduino9"
             }
           ]
+        },
+        {
+          "name": "Elektor AVR boards",
+          "architecture": "avr",
+          "version": "1.0.3",
+          "category": "Contributed",
+          "help": {
+            "online": "http://www.elektor-labs.com"
+          },
+          "url": "https://github.com/ElektorLabs/Arduino/releases/download/v1.0.1/elektor-boards-avr-1.0.3.zip",
+          "archiveFileName": "elektor-boards-avr-1.0.3.zip",
+          "checksum": "SHA-256:7990aba7ade9bf9e9c9becea181aaabbf5055254a2e21f8a94c28a878327ef03",
+          "size": "258107",
+          "help": {
+                    "online": "http://www.elektor-labs.com"
+          },
+          "boards": [
+            {"name": "AVR Playground"},
+            {"name": "eRIC Nitro"},
+            {"name": "Platino"}
+          ],
+          "toolsDependencies": [
+            {
+              "packager": "arduino",
+              "name": "avr-gcc",
+              "version": "4.9.2-atmel3.5.4-arduino2"
+            },
+            {
+              "packager": "arduino",
+              "name": "avrdude",
+              "version": "6.3.0-arduino9"
+            }
+          ]
         }
       ],
       "tools":[]
