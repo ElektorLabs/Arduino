@@ -11,7 +11,7 @@ URLs for the IDE:
 - AVR Playground, Platino & eRIC Nitro:
   https://github.com/ElektorLabs/Arduino/releases/download/v1.0.1/package_elektor_index.json
 - Elektor Uno R4 only, Arduino IDE 1.6.1x & 1.8.x: 
-  https://github.com/ElektorLabs/Arduino/releases/download/v1.0.0/package_elektor_uno_r4_1_8_x_index.json
+  https://github.com/ElektorLabs/Arduino/releases/download/v1.0.1/package_elektor_uno_r4_1_8_x_index.json
  
 Use the Arduino IDE Boards Manager to install this package, as follows:
 - Open the Arduino IDE's Preferences dialog: File -> Preferences
