@@ -1,5 +1,5 @@
-# Elektor AVR Board Package for Arduino IDE
-This repository contains the package descriptors for Elektor's Arduino compatible boards.
+# [Elektor](https://www.elektormagazine.com/) AVR Board Package for Arduino IDE
+This repository contains the package descriptors for [Elektor](https://www.elektormagazine.com/labs/)'s Arduino compatible boards.
 
 Supports:
 - [Platino](https://www.elektormagazine.com/labs/platino-versatile-board-for-avr-microcontrollers-100892-150555) (16 MHz)
