@@ -40,7 +40,7 @@
               "version": "6.3.0-arduino2"
             }
           ]
-        }
+        },
         {
           "name": "Elektor Uno R4 for Arduino 1.8.13 and up",
           "architecture": "avr",
