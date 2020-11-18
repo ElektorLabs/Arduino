@@ -9,7 +9,7 @@ Supports:
 
 URLs for the IDE:
 - AVR Playground, Platino & eRIC Nitro:
-  https://github.com/ElektorLabs/Arduino/releases/download/v1.0.1/package_elektor_index.json
+  https://github.com/ElektorLabs/Arduino/releases/download/v1.0.2/package_elektor_index.json
 - Elektor Uno R4 only, Arduino IDE 1.6.1x & 1.8.x (package version v1.0.0). Package version 2.0.0 was updated at Arduino IDE version 1.8.13: 
   https://github.com/ElektorLabs/Arduino/releases/download/v1.0.2/package_elektor_uno_r4_1_8_x_index.json
  
