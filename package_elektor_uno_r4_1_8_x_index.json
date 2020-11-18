@@ -1,0 +1,69 @@
+{
+  "packages": [
+    {
+      "name": "Elektor-Uno-R4-for-Arduino-1.8.x",
+      "maintainer": "Elektor.Labs",
+      "websiteURL": "https://github.com/ElektorLabs/arduino/",
+      "email": "info@elektor-labs.com",
+      "help": {
+        "online": "http://www.elektor-labs.com"
+      },
+      "platforms": [
+        {
+          "name": "Elektor Uno R4 for Arduino 1.8.x",
+          "architecture": "avr",
+          "version": "1.0.0",
+          "category": "Contributed",
+          "help": {
+            "online": "http://www.elektor-labs.com"
+          },
+          "url": "https://github.com/ElektorLabs/Arduino/releases/download/v1.0.1/elektor-uno-r4-1.8.x-1.0.0.zip",
+          "archiveFileName": "elektor-uno-r4-1.8.x-1.0.0.zip",
+          "checksum": "SHA-256:9c753d101e3208da70c6989c581dc1f60c0e24760114071134e5128439e27e84",
+          "size": "198125",
+          "help": {
+                    "online": "http://www.elektor-labs.com"
+          },
+          "boards": [
+            {"name": "Elektor Uno R4 @ 16 MHz"},
+            {"name": "Elektor Uno R4 @ 8 MHz"}
+          ],
+          "toolsDependencies": [
+            {
+              "packager": "arduino",
+              "name": "avr-gcc",
+              "version": "4.9.2-atmel3.5.3-arduino2"
+            },
+            {
+              "packager": "arduino",
+              "name": "avrdude",
+              "version": "6.3.0-arduino2"
+            }
+          ]
+        }
+        {
+          "name": "Elektor Uno R4 for Arduino 1.8.13 and up",
+          "architecture": "avr",
+          "version": "1.0.0",
+          "category": "Contributed",
+          "help": {
+            "online": "http://www.elektor-labs.com"
+          },
+          "url": "https://github.com/ElektorLabs/Arduino/raw/master/elektor-uno-r4-1.8.13-1.0.0.zip",
+          "archiveFileName": "elektor-uno-r4-1.8.13-1.0.0.zip",
+          "checksum": "SHA-256:fe31578cb767ebdd16f4d9e56528dd6910f72b0ea535e700af47c6a794a17958",
+          "size": "199509",
+          "help": {
+                    "online": "http://www.elektor-labs.com"
+          },
+          "boards": [
+            {"name": "Elektor Uno R4 @ 16 MHz"},
+            {"name": "Elektor Uno R4 @ 8 MHz"}
+          ],
+          "toolsDependencies": []
+        }
+      ],
+      "tools":[]
+    }
+  ]
+}
