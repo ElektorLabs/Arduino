@@ -49,10 +49,31 @@
           "help": {
             "online": "http://www.elektor-labs.com"
           },
-          "url": "https://github.com/ElektorLabs/Arduino/releases/download/v1.0.2/elektor-uno-r4-1.8.13-1.0.0.zip",
+          "url": "https://github.com/ElektorLabs/Arduino/releases/download/v1.0.1/elektor-uno-r4-1.8.13-1.0.0.zip",
           "archiveFileName": "elektor-uno-r4-1.8.13-1.0.0.zip",
           "checksum": "SHA-256:1ee0388a5b2778b4819f75da96a8f1b7c202735fd8e660b8837a0cf059a9b31b",
           "size": "202850",
+          "help": {
+                    "online": "http://www.elektor-labs.com"
+          },
+          "boards": [
+            {"name": "Elektor Uno R4 @ 16 MHz"},
+            {"name": "Elektor Uno R4 @ 8 MHz"}
+          ],
+          "toolsDependencies": []
+        },
+        {
+          "name": "Elektor Uno R4 for Arduino 1.8.x",
+          "architecture": "avr",
+          "version": "2.0.1",
+          "category": "Contributed",
+          "help": {
+            "online": "http://www.elektor-labs.com"
+          },
+          "url": "https://github.com/ElektorLabs/Arduino/releases/download/v1.0.1/elektor-uno-r4-1.8.13-1.0.1.zip",
+          "archiveFileName": "elektor-uno-r4-1.8.13-1.0.1.zip",
+          "checksum": "SHA-256:948907dc2b728e14c592383a2af844ac34a70f5ac48178439c8e20035897e731",
+          "size": "203725",
           "help": {
                     "online": "http://www.elektor-labs.com"
           },
